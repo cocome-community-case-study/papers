@@ -1,0 +1,170 @@
+\chapter{Design Details for Evolution Scenarios}
+%TODO "describes the adaptive evolution scenari of.." changed to "changes in "
+In this chapter we provide the detailed design documentation for each of the evolution scenarios
+introduced in the prior section. Sec. \ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec. \ref{Docker} describes the adaptive changes of setting up a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of CoCoME \cite{SWB-469002735}. In contrast, Sec. \ref{MS} provides a detailed design documentation of a new architectural version of CoCoME. This perfective evolution scenario is realized based on the Microservice idea.
+
+\section{Adding a Mobile App Client} \label{App} %TODO Zitat, Bild kopiert wie??
+Developing the Mobile App Client as an extension of CoCoME requires additional use cases. These are described in Sec. \ref{UseCasesMobileApp}. Sec. \ref{DesignMobileApp} describes extensions on design level. The Mobile App Client is using the hybrid cloud-based variant of CoCoME but does not require any changes of CoCoME itself. The content of this chapter mainly originates from \cite{schnabel}.
+\subsection{Use Cases of the Mobile App}\label{UseCasesMobileApp}
+		\begin{figure}[t]
+			\includegraphics[width=\textwidth]{img/UseCaseApp.png}
+			\caption{Use Case Diagram CoCoME Mobile App}
+		\end{figure}
+
+\textbf{UC 14 - ProcessAppSale}\\
+\textit{Brief Description} A Customer selects the product items s/he wants to buy and the payment by credit card is performed.\\ \newline
+\textit{Involved Actors} AppCustomer, Bank\\ \newline
+\textit{Precondition} The App is ready to process a new sale and the Customer already has an account registered in the System.\\ \newline
+\textit{Trigger} The Customer opens the app and wants to buy product items.\\ \newline
+\textit{Postcondition} The Customer has paid and the sale is registered in the inventory.\\ \newline
+\textit{Standard Process}
+\begin{itemize}[leftmargin=*]
+	\item[1.] The AppCustomer searches products provided by the App.
+	\item[2.] The AppCustomer can see details for each product on a separate site.
+	\item[3.] The AppCustomer adds the product items s/he wants to purchase to the Shopping Cart by clicking the Add to Cart button. Step 1-3 is repeated until all items are added to the cart.
+	\item[4.] The System presents the Customer with the item names, prices and the running total.
+	\item[5.] Denoting the end of adding items, the Customer presses the Proceed to checkout button.
+	\item[6.] The AppCustomer selects the Store where he wants to pick up his	purchased product items. A mobile Application proof of concept 3
+	\item[7.] The AppCustomer is presented with a login form and is required to complete the "Authenticate user" use case.
+	\item[8.] In order to initiate card payment, the Customer selects a credit card used
+	for the purchase.
+	\item[9.] The AppCustomer enters his PIN in the designated field presented by the System.
+	\item[10.] The System presents the Customer with an overview of the purchase, the AppCustomer confirms the purchase and waits for validation. Step 9 is repeated until the validation is successful or the Customer decides to cancel the purchase.
+	\item[11.] Completed sales are logged by the System and sale information are sent to	the Inventory in order to update the stock.
+	\item[12.] A success message is presented to the AppCustomer and the product items
+	are being prepared to be picked up by the customer.
+	\item[13.] The AppCustomer closes the app.
+\end{itemize}
+
+\textit{Alternative or Exceptional Processes}
+\begin{itemize}
+	\item[-] In step 8: No Card available
+	\begin{itemize}
+		\item[1.] In order to add a new credit card the Customer clicks the Add Card button.
+		\item[2.] The Customer enters the card number of the new credit card and saves the card.
+	\end{itemize}
+	
+	\item[-] In step 10: Card validation fails
+	\begin{itemize}
+		\item[1.] The Customer tries again and again.
+		\item[2.] Otherwise, the Customer can decide to cancel the purchase.
+	\end{itemize}
+\end{itemize}
+
+
+\textbf{UC 15 - CreateAppCustomer}\\ \newline
+\textit{Brief Description} The app provides the opportunity to create a new Customer account.\\ \newline
+\textit{Involved Actors} AppCustomer\\ \newline
+\textit{Precondition} The Customer does not have a Customer account yet and the app is started.\\ \newline
+\textit{Trigger} A new AppCustomer wants to create an account.\\ \newline
+\textit{Postcondition} The User is authenticated.\\ \newline
+\textit{Standard Process}
+\begin{itemize}[leftmargin=*]
+	\item[1.] The app presents the Customer a 3 step wizard with forms to fill out, requesting all necessary information to create a new Customer account.
+	\begin{itemize}
+		\item[(a)] Form for name, email and password
+		\item[(b)] Form for address
+		\item[(c)] Summery of the information and a submit button
+	\end{itemize}
+	\item[2.]The Customer fills out the forms, checks the information and submits the	information.
+	\item[3.] The app checks the provided information and creates a new Customer account in the Inventory.
+\end{itemize}
+
+\textit{Alternative or Exceptional Processes}
+\begin{itemize}
+	\item[-] In step 3 : Provided information is incorrect or not valid. The Customer is	notified of the problem and enters the information again until it passes the check.	
+\end{itemize}
+
+\textbf{UC 16 - AuthenticateAppUser}\\ \newline
+\textit{Brief Description} The app provides the opportunity to authenticate a User.\\ \newline
+\textit{Involved Actors} AppCustomer\\ \newline
+\textit{Precondition} The app is started.\\ \newline
+\textit{Trigger} A User wants to authenticate himself.\\ \newline
+\textit{Postcondition} The User is authenticated.\\ \newline
+\textit{Standard Process}
+\begin{itemize}[leftmargin=*]
+	\item[1.] The AppCustomer is presented with a login form and enters his email and password.
+	\item[2.] The app checks the provided credentials and logs the User in.
+\end{itemize}
+
+\textit{Alternative or Exceptional Processes}
+\begin{itemize}
+	\item[-] In step 2: Wrong credentials
+	\begin{itemize}
+		\item[1.] The User is presented with an error message.
+		\item[2.] The User may try again until the authentication succeeds.
+	\end{itemize}
+\end{itemize}
+
+
+\newpage
+
+\subsection{Design of the Mobile App}\label{DesignMobileApp}
+ In Fig. \ref{ComponentApp}, the component diagram for this evolution scenario is shown. For adding the Mobile App client, the hybrid cloud-based variant of CoCoME did not have to be modified. Therefore, CoCoME is encapsulated in a single component. Simply the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store and WebService::Inventory::Enterprise} used by the App Client are emphasized. The entire component diagram for the hybrid cloud-based variant is available in the Technical Report \cite{SWB-469002735}. 
+ \\ Fig. \ref{ComponentApp} indicates that the AppShop requires an adapter to access the web services provided by CoCoME. This is because CoCoME uses SOAP/WS*-based web services which are not compatible with the technology used to implement the AppShop Client. A more detailed introduction about the technology used to implement the Mobile App Client can be found in \cite{schnabel}. 
+  
+ \begin{figure}[!h]
+	\includegraphics[width=\textwidth]{img/appComponent.png}
+	\caption{Component Diagram of the CoCoME Ecosystem After Adding the Mobile App Client}
+	\label{ComponentApp}
+\end{figure}
+
+  The \textit{AppShopAdapter} consumes the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store} and \textit{WebService::Inventory::Enterprise} and provides a Rest Api which is used by the actual \textit{AppShop}. This Rest Api contains endpoints to retrieve and process Credit Card, Enterprise and StockItem information. To implement \emph{UC14-16}, the Api also provides endpoints for user management and processing sales. 
+  
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{img/appSearchSequence.png}
+	\caption{Sequence Diagram of Searching an Item in the Mobile App Client}
+	\label{SequenceApp}
+\end{figure}
+
+Fig. \ref{SequenceApp} shows the process of opening a page to search for an Item. The customer opens the \textit{WebShopClient} and clicks on the "Search" button to search for an item. To open the page, the \textit{NavigatorMenu} must call the \textit{Navigator} which creates a pagestate object and passes the object to the page. This HTML page is now presented to the customer. To fill the page with information, i.e when searching for a \textit{ProductItem}, the page uses services provided by the \textit{ServiceHolder}. In this case, the \textit{ItemService} calls the responsible REST-Service of \textit{AppShopAdapter} which in turn retrieves the necessary information from the WSDL services provided by CoCoME.
+
+
+
+
+\section{Setting up a Docker environment} \label{Docker}
+
+As shown in Fig. \ref{techStack}, the changes carried out when setting up a Docker environment are affecting the technology stack by adding additional layers. More detailed, the given CoCoME Stack is moved into the Docker Deamon, which runs a Linux distribution.The original parts of the stack, like Glassfish and the Java Virtual Machine, are still a part of the stack.
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width = 0.5\textwidth]{img/tech_stack_CoCoME.png}
+		\caption{Extended technology stack CoCoME}
+		\label{techStack}
+	\end{figure}
+	
+The Dockerfile defines an environment based on the latest version of Ubuntu 16:04. Onto it there is installed Maven, Git and Java by using the Ubuntu package manager.\\
+Git has two purposes: On the one hand it is used to download the most recent version of CoCoME.	On the other hand, it is used to download a prefabricated version of Glassfish that already includes domains and other adjustments required for CoCoME. Java is required by Glassfish and CoCoME as they need the Java Virtual Machine. Maven is needed to deploy the latest version of CoCoME onto the provided Glassfish servers.
+	
+	
+	During the development, it was decided to implement and provide two different versions. The first version always pulls the most recent CoCoME source code from GitHub, downloads the entire dependencies with maven, compiles and builds the project and finally, deploys CoCoME on the Glassfish servers. . As a consequence. creating and starting a Docker Container takes about one hour.\\
+	In contrast, the second version only  pulls a prefabricated version of CoCoME from GitHub. Therefore, pulling the source code up to building the project is skipped. As a consequence, Maven does not have to be included in the technology stack. Solely, deploying CoCoME on the glassfish server is necessary.\\
+	This reduces the deployment time to a few minutes but has a disadvantage: The prefabricated version is updated manually. Therefore, it is sometime not the most recent version.\\
+	By providing both, a fast deploying version and a current version, the user can choose what's the best for its situation.
+	
+
+	
+
+	
+\section{Using Microservices Technology} \label{MS}
+	\begin{itemize}
+		\item je microservice absatz mit entsprechenden Sequenzendiagram %fertig machen der implementierung
+		\item frontend? muss dazu auch das gemacht werden?
+		\item ein blocktext zu mehereren diagrammen oder diagramme zwischen text?
+		
+	
+			\item je die einzelnen module und szenarien erlaeutern in dem diese sinnvoll sind
+	\end{itemize}
+	
+		\subsection{Products}
+		abstrahieren der Produktinformationen 
+		
+		\subsection{Stores}
+		einzelne Laeden alleinstehend abbilden um nach bedarf neue microservices alias laeden starten zu können
+		
+		\subsection{Enterprise}
+		aehnlich zu stroes
+		
+		\subsection{Reports}
+		stellt alleinigen aufgaben bereich dar, entsprechen undabhaengig darzustellen von anderem.
+

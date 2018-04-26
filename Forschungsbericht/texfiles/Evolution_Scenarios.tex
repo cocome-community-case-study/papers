@@ -1,0 +1,44 @@
+\chapter{Evolution Scenarios}
+We implemented distinct evolution scenarios covering the categories adaptive and perfective
+evolution. Corrective evolution is not considered in the scenarios as this merely refers to fixing design or implementation issues.
+
+\section{Evolution Scenarios of the Hybrid Cloud-based Variant}
+This section introduces the two evolution scenarios of the hybrid cloud-based variant of
+CoCoME.
+\subsection{Setting up a Docker environment}
+~\\The CoCoME company must reduce IT administration costs but frequent updates to the enterprise and store software are necessary to continuously improve the entire system. As a consequence, IT staff need to update the system components as soon as a new software version is released. An Operations Team member has to get access to the actual server in order to undeploy the old version and replace it with the new one. This is time consuming and expensive as the updates have to be done manually.\\
+Therefore, a Docker version is elaborated to simplify the administration process. As soon as a new software version of CoCoME is ready for delivery, the Development Team wrap it into a Docker Image. This Image can be automatically deployed to the destination server according to the principle of Continuous Deployment (CD) \cite{olsson2012climbing}. 
+
+
+
+
+\subsection{Adding a Mobile App}
+~\\After successfully adding a Pick-up Shop, the CoCoME company stays competitive with other online shop vendors (such as Amazon). In times of smartphones, customer do not only want to buy exclusively goods from their home computers. Purchasing goods 'on the way' comes more and more into fashion. This raises the idea to create a second sales channel next to the existing Pick-up Shop in the CoCoME system. As a consequence, more customers can be attracted to gain a larger share of the market. 
+\\
+The customer can order and pay by using the app. The delivery process is similar to the Pick-up Shop: The goods are delivered to a pick-up place (i.e. a store) of her/his choice, for example in the neighbourhood or the way to work.
+By introducing the Mobile App as a multi OS application, the CoCoME system has to face various quality issues such as privacy, security and reliability. Also the performance of the whole application can be affected if many customers order via the app.
+
+
+
+
+%TD\newpage
+
+\section{Evolution Scenarios of the Microservice-based Variant}
+This section introduces the evolution scenario of the Microservice-based variant of
+CoCoME.
+\subsection{Defining different Microservices}
+After a year of economical stagnation, the CoCoME company decided to restructure its infrastructure. Global players like Amazon or Netflix demonstrated that using a Microservice Architecture makes them more flexible regarding new functionality. When adding the Pick-up Shop, the CoCoME company realized that they have to break open the existing system. It was necessary to modify the \textit{WebService::Inventory} and the \textit{TradingSystem::Inventory} component \cite{SWB-469002735}. Furthermore, adding a \textit{MobileAppClient} demonstrated that the SOAP/WS*-based web services provided by CoCoME are not compatible with REST-based App development.
+\\
+Inspired by the flexibility and reusability of Microservices, the CoCoME company decided to invest money into a restructuring process. The current system is divided into a collection of loosely coupled services. Each of them cover a specific part of the former CoCoME system. The aim is to preserve the functionality of the current system and solely change its architecture.
+\\
+ This enables the company to develop new markets much easier and therefore secures the future competitiveness. For example, the CoCoME company wants to extend their product range by offering movie streaming. This requires a vastly different system. Nevertheless, Customer Management like login and means of payment are identical to the former CoCoME system. Those components already exists as a Microservice a therefore can be taken over. The management is certain that this will soon result in economical growth.
+
+
+
+
+
+
+
+
+	
+	

@@ -1,0 +1,21 @@
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {chapter}{\numberline {2}Evolution Scenarios}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Evolution Scenarios of the Hybrid Cloud-based Variant}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Setting up a Docker environment}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Adding a Mobile App}{5}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Evolution Scenarios of the Microservice-based Variant}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Defining different Microservices}{6}{subsection.2.2.1}
+\contentsline {chapter}{\numberline {3}Design Details for Evolution Scenarios}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Adding a Mobile App Client}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Use Cases of the Mobile App}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Design of the Mobile App}{11}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Setting up a Docker environment}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Using Microservices Technology}{13}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Products}{14}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Stores}{14}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Enterprise}{14}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Reports}{14}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Implementation of Evolution Scenarios}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Docker}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Mobile App}{17}{section.4.2}
+\contentsline {chapter}{\numberline {5}Conclusion}{18}{chapter.5}

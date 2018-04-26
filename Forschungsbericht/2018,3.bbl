@@ -1,0 +1,24 @@
+\def\etalchar#1{$^{#1}$}
+\begin{thebibliography}{GRGH{\etalchar{+}}15}
+
+\bibitem[GRGH{\etalchar{+}}15]{Goltz2015}
+Ursula Goltz, Ralf~H. Reussner, Michael Goedicke, Wilhelm Hasselbring, Lukas
+  M{\"a}rtin und Birgit Vogel-Heuser.
+\newblock Design for future: managed software evolution.
+\newblock {\em Computer Science - Research and Development}, 30(3), Aug 2015,
+  S.~321--331.
+
+\bibitem[Hein16]{SWB-469002735}
+Robert~[VerfasserIn] Heinrich.
+\newblock The CoCoME platform for collaborative empirical research on
+  information system evolution, [2016].
+
+\bibitem[OlAB12]{olsson2012climbing}
+Helena~Holmstr{\"o}m Olsson, Hiva Alahyari und Jan Bosch.
+\newblock Climbing the" Stairway to Heaven"--A Mulitiple-Case Study Exploring
+  Barriers in the Transition from Agile Development towards Continuous
+  Deployment of Software.
+\newblock In {\em Software Engineering and Advanced Applications (SEAA), 2012
+  38th EUROMICRO Conference on}. IEEE, 2012, S.~392--399.
+
+\end{thebibliography}
