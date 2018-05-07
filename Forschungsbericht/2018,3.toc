@@ -18,6 +18,5 @@
 \contentsline {chapter}{\numberline {4}Implementation of Evolution Scenarios}{16}{chapter.4}
 \contentsline {section}{\numberline {4.1}Docker}{16}{section.4.1}
 \contentsline {section}{\numberline {4.2}Adding a Mobile App Client}{18}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}AppShop Adapter API}{18}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Using Microservice Technology}{18}{section.4.3}
-\contentsline {chapter}{\numberline {5}Conclusion}{20}{chapter.5}
+\contentsline {section}{\numberline {4.3}Using Microservice Technology}{20}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{21}{chapter.5}

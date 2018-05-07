@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  7 MAY 2018 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  7 MAY 2018 19:33
 entering extended mode
 **./2018,3.tex
 (2018,3.tex
@@ -1899,6 +1899,10 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 )
 Class scrreprt Info: longtable captions redefined on input line 21.
 
+("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\placeins\placei
+ns.sty"
+Package: placeins 2005/04/18  v 2.2
+)
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\draftwatermark\
 draftwatermark.sty"
 Package: draftwatermark 2015/02/19 1.2 Put a gray textual watermark on document
@@ -1953,35 +1957,35 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (2018,3.aux)
 \openout1 = `2018,3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 39.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 39.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 40.
  ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ly1\ly1ptm.fd"
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 39.
+input line 40.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\libertine\t1lin
 uxlibertinet-tlf.fd"
@@ -1989,12 +1993,12 @@ File: T1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 40.
 \c@mv@tabular=\count175
 \c@mv@boldtabular=\count176
 Package mathastext Info: current meaning of amsmath \resetMathstrut@ saved on i
-nput line 39.
-LaTeX Info: Redefining \microtypecontext on input line 39.
+nput line 40.
+LaTeX Info: Redefining \microtypecontext on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2040,7 +2044,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box94
-Package hyperref Info: Link coloring ON on input line 39.
+Package hyperref Info: Link coloring ON on input line 40.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\namere
 f.sty"
@@ -2052,9 +2056,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count183
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
  (2018,3.out) (2018,3.out)
 \@outlinefile=\write4
 \openout4 = `2018,3.out'.
@@ -2095,15 +2099,15 @@ LaTeX Info: Redefining \nameref on input line 39.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count184
-<logos/kitlogo_en_cmyk.pdf, id=122, pagebox=cropbox, 198.7425pt x 92.345pt>
+<logos/kitlogo_en_cmyk.pdf, id=118, pagebox=cropbox, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 <use logos/kitlogo_en_cmyk.pdf>
-Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf  used on input line 56. on i
-nput line 56.
+Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf  used on input line 57. on i
+nput line 57.
 Package pdftex.def Info: Requested size: 110.22453pt x 51.21504pt on input line
- 56.
+ 57.
 LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
-ut line 56.
+ut line 57.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sourcesanspro\t
 1sourcesanspro-lf.fd"
@@ -2111,19 +2115,19 @@ File: T1SourceSansPro-LF.fd 2016/12/03 (autoinst) Font definitions for T1/Sourc
 eSansPro-LF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 56.
+(Font)              scaled to size 11.03998pt on input line 57.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceSansPro-LF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 56.
+(Font)              scaled to size 11.03998pt on input line 57.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 56.
+(Font)              scaled to size 22.88956pt on input line 57.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 56.
+(Font)              scaled to size 13.24796pt on input line 57.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 56.
+(Font)              scaled to size 17.28pt on input line 57.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-cm
 r.cfg"
@@ -2131,14 +2135,14 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 56.
+(Font)              scaled to size 14.4pt on input line 57.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 17.28pt on input line 56.
+(Font)              scaled to size 17.28pt on input line 57.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 56.
+(Font)              scaled to size 14.4pt on input line 57.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 56.
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+(Font)              scaled to size 12.0pt on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.f
 d"
@@ -2148,7 +2152,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 a.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
 
 ("C:\Users\Nikolaus\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.f
 d"
@@ -2163,7 +2167,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {C:/Users/Nikolaus/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logos/
 kitlogo_en_cmyk.pdf>]
-Package tocbasic Info: character protrusion at toc deactivated on input line 58
+Package tocbasic Info: character protrusion at toc deactivated on input line 59
 .
  (2018,3.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
@@ -2182,7 +2186,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 61
+Package tocbasic Info: character protrusion at lof deactivated on input line 62
 .
  (2018,3.lof)
 \tf@lof=\write6
@@ -2227,7 +2231,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 1.
  [6]
 chapter 3.
-<img/UseCaseApp.png, id=210, 1369.115pt x 840.13875pt>
+<img/UseCaseApp.png, id=205, 1369.115pt x 840.13875pt>
 File: img/UseCaseApp.png Graphic file (type png)
 <use img/UseCaseApp.png>
 Package pdftex.def Info: img/UseCaseApp.png  used on input line 10. on input li
@@ -2350,7 +2354,7 @@ Overfull \hbox (6.04442pt too wide) in paragraph at lines 103--105
 ventory::Store and Web-Ser-vice::Inventory::Enterprise
  []
 
-<img/appComponent.png, id=234, 578.16pt x 357.7365pt>
+<img/appComponent.png, id=229, 578.16pt x 357.7365pt>
 File: img/appComponent.png Graphic file (type png)
 <use img/appComponent.png>
 Package pdftex.def Info: img/appComponent.png  used on input line 107. on input
@@ -2365,7 +2369,7 @@ y::Enterprise \T1/LinuxLibertineT-TLF/m/n/12 (-20) and pro-vides a Rest Api whi
 ch
  []
 
-<img/appSearchSequence.png, id=235, 763.1712pt x 419.8887pt>
+<img/appSearchSequence.png, id=230, 763.1712pt x 419.8887pt>
 File: img/appSearchSequence.png Graphic file (type png)
 <use img/appSearchSequence.png>
 Package pdftex.def Info: img/appSearchSequence.png  used on input line 115. on 
@@ -2382,7 +2386,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
                                                   
 l.121 
        <./img/appComponent.png (PNG copy)>]
-<img/ProcessAppSale.png, id=243, 799.3062pt x 443.0151pt>
+<img/ProcessAppSale.png, id=238, 799.3062pt x 443.0151pt>
 File: img/ProcessAppSale.png Graphic file (type png)
 <use img/ProcessAppSale.png>
 Package pdftex.def Info: img/ProcessAppSale.png  used on input line 129. on inp
@@ -2400,7 +2404,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
                                                   
 l.134 \newpage
                <./img/appSearchSequence.png (PNG copy)>]
-<img/tech_stack_CoCoME.png, id=249, 550.055pt x 532.99126pt>
+<img/tech_stack_CoCoME.png, id=244, 550.055pt x 532.99126pt>
 File: img/tech_stack_CoCoME.png Graphic file (type png)
 <use img/tech_stack_CoCoME.png>
 Package pdftex.def Info: img/tech_stack_CoCoME.png  used on input line 142. on 
@@ -2427,7 +2431,7 @@ l.181 		\subsection
                    {Reports} <./img/tech_stack_CoCoME.png>])
 (texfiles/Implementation_of_Evolution_Scenarios.tex [15]
 chapter 4.
-<img/docker_Container_Deployment.png, id=269, 697.60625pt x 688.5725pt>
+<img/docker_Container_Deployment.png, id=264, 697.60625pt x 688.5725pt>
 File: img/docker_Container_Deployment.png Graphic file (type png)
 <use img/docker_Container_Deployment.png>
 Package pdftex.def Info: img/docker_Container_Deployment.png  used on input lin
@@ -2461,7 +2465,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<img/docker_Container_PickUP.png, id=274, 416.55624pt x 334.24875pt>
+<img/docker_Container_PickUP.png, id=269, 416.55624pt x 334.24875pt>
 File: img/docker_Container_PickUP.png Graphic file (type png)
 <use img/docker_Container_PickUP.png>
 Package pdftex.def Info: img/docker_Container_PickUP.png  used on input line 34
@@ -2493,33 +2497,32 @@ l.52
                                                   
 l.52  	
         <./img/docker_Container_Deployment.png>]
-<img/appBasicClass.png, id=290, 728.4816pt x 330.2739pt>
+<img/appBasicClass.png, id=284, 728.4816pt x 330.2739pt>
 File: img/appBasicClass.png Graphic file (type png)
 <use img/appBasicClass.png>
-Package pdftex.def Info: img/appBasicClass.png  used on input line 65. on input
- line 65.
-Package pdftex.def Info: Requested size: 455.24411pt x 206.39546pt on input lin
-e 65.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (texfiles/Conclusion.tex [18pdfTeX warning (ext4): destination with the same 
-identifier (name{figure.4.3}) has been already used, duplicate ignored
+Package pdftex.def Info: img/appBasicClass.png  used on input line 64. on input
+ line 64.
+Package pdftex.def Info: Requested size: 617.4248pt x 279.93787pt on input line
+ 64.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1 \chapter
-            {Conclusion} <./img/docker_Container_PickUP.png>] [19pdfTeX warning
- (ext4): destination with the same identifier (name{figure.4.5}) has been alrea
-dy used, duplicate ignored
+l.69 \FloatBarrier
+                   <./img/docker_Container_PickUP.png>] [19pdfTeX warning (ext4
+): destination with the same identifier (name{figure.4.5}) has been already use
+d, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1 \chapter
-            {Conclusion} <./img/appBasicClass.png (PNG copy)>]
+l.69 \FloatBarrier
+                   <./img/appBasicClass.png (PNG copy)>])
+(texfiles/Conclusion.tex [20
+
+]
 chapter 5.
-) (2018,3.bbl [20
+) (2018,3.bbl [21
 
 ]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
@@ -2542,23 +2545,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 d-[]jee-[]microservices-[]rest /
  []
 
-) [21
+) [22
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
  (2018,3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `2018,3.out' has not changed.
-(rerunfilecheck)             Checksum: DF54BD1B67F7A1051B4C7301AF87FDE2;1765.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
+(rerunfilecheck)             Checksum: 438105CB089F9996A287E7A25AFD79C2;1685.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 31130 strings out of 493312
- 623238 string characters out of 3128523
- 791620 words of memory out of 3000000
- 33791 multiletter control sequences out of 15000+200000
+ 31148 strings out of 493312
+ 623680 string characters out of 3128523
+ 791691 words of memory out of 3000000
+ 33805 multiletter control sequences out of 15000+200000
  147619 words of font info for 168 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  82i,12n,84p,8846b,692s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2576,9 +2579,9 @@ al/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/User
 s/Nikolaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/sourcesanspro/So
 urceSansPro-Bold.pfb><C:/Users/Nikolaus/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/bera/fvmr8a.pfb>
-Output written on 2018,3.pdf (21 pages, 1097801 bytes).
+Output written on 2018,3.pdf (22 pages, 1097530 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
+ 352 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
- 31058 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 31050 words of extra memory for PDF output out of 35830 (max. 10000000)
 

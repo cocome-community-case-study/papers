@@ -18,6 +18,5 @@
 \BOOKMARK [0][-]{chapter.4}{4 Implementation of Evolution Scenarios}{}% 18
 \BOOKMARK [1][-]{section.4.1}{4.1 Docker}{chapter.4}% 19
 \BOOKMARK [1][-]{section.4.2}{4.2 Adding a Mobile App Client}{chapter.4}% 20
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 AppShop Adapter API}{section.4.2}% 21
-\BOOKMARK [1][-]{section.4.3}{4.3 Using Microservice Technology}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 23
+\BOOKMARK [1][-]{section.4.3}{4.3 Using Microservice Technology}{chapter.4}% 21
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 22
