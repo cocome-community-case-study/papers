@@ -1,24 +1,29 @@
-\def\etalchar#1{$^{#1}$}
-\begin{thebibliography}{GRGH{\etalchar{+}}15}
+\begin{thebibliography}{1}
 
-\bibitem[GRGH{\etalchar{+}}15]{Goltz2015}
-Ursula Goltz, Ralf~H. Reussner, Michael Goedicke, Wilhelm Hasselbring, Lukas
-  M{\"a}rtin und Birgit Vogel-Heuser.
-\newblock Design for future: managed software evolution.
-\newblock {\em Computer Science - Research and Development}, 30(3), Aug 2015,
-  S.~321--331.
+\bibitem{HeinrichRostamiReussner2016_1000052688}
+R.~Heinrich, K.~Rostami, and R.~Reussner.
+\newblock The cocome platform for collaborative empirical research on
+  information system evolution.
+\newblock Technical Report~2, 2016.
 
-\bibitem[Hein16]{SWB-469002735}
-Robert~[VerfasserIn] Heinrich.
-\newblock The CoCoME platform for collaborative empirical research on
-  information system evolution, [2016].
-
-\bibitem[OlAB12]{olsson2012climbing}
-Helena~Holmstr{\"o}m Olsson, Hiva Alahyari und Jan Bosch.
-\newblock Climbing the" Stairway to Heaven"--A Mulitiple-Case Study Exploring
-  Barriers in the Transition from Agile Development towards Continuous
-  Deployment of Software.
+\bibitem{olsson2012climbing}
+H.~H. Olsson, H.~Alahyari, and J.~Bosch.
+\newblock Climbing the" stairway to heaven"--a mulitiple-case study exploring
+  barriers in the transition from agile development towards continuous
+  deployment of software.
 \newblock In {\em Software Engineering and Advanced Applications (SEAA), 2012
-  38th EUROMICRO Conference on}. IEEE, 2012, S.~392--399.
+  38th EUROMICRO Conference on}, pages 392--399. IEEE, 2012.
+
+\bibitem{schnabel}
+J.~Schnabel.
+\newblock Mobile application client for a cloud based software system.
+\newblock
+  \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-app-shop/blob/master/doc/SQEE1617_MobileApp_Schnabel.pdf}.
+
+\bibitem{sommer}
+N.~Sommer.
+\newblock Erweiterung und wartung einer cloud-basierten jee-architektur.
+\newblock
+  \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-microservices-rest/blob/master/doc/report.pdf}.
 
 \end{thebibliography}

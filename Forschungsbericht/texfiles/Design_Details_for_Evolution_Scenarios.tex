@@ -1,7 +1,7 @@
 \chapter{Design Details for Evolution Scenarios}
 %TODO "describes the adaptive evolution scenari of.." changed to "changes in "
 In this chapter we provide the detailed design documentation for each of the evolution scenarios
-introduced in the prior section. Sec. \ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec. \ref{Docker} describes the adaptive changes of setting up a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of CoCoME \cite{SWB-469002735}. In contrast, Sec. \ref{MS} provides a detailed design documentation of a new architectural version of CoCoME. This perfective evolution scenario is realized based on the Microservice idea.
+introduced in the prior section. Sec. \ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec. \ref{Docker} describes the adaptive changes of setting up a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of CoCoME \cite{HeinrichRostamiReussner2016_1000052688}. In contrast, Sec. \ref{MS} provides a detailed design documentation of a new architectural version of CoCoME. This perfective evolution scenario is realized based on the Microservice idea.
 
 \section{Adding a Mobile App Client} \label{App} %TODO Zitat, Bild kopiert wie??
 Developing the Mobile App Client as an extension of CoCoME requires additional use cases. These are described in Sec. \ref{UseCasesMobileApp}. Sec. \ref{DesignMobileApp} describes extensions on design level. The Mobile App Client is using the hybrid cloud-based variant of CoCoME but does not require any changes of CoCoME itself. The content of this chapter mainly originates from \cite{schnabel}.
@@ -100,7 +100,7 @@ Developing the Mobile App Client as an extension of CoCoME requires additional u
 \newpage
 
 \subsection{Design of the Mobile App}\label{DesignMobileApp}
- In Fig. \ref{ComponentApp}, the component diagram for this evolution scenario is shown. For adding the Mobile App client, the hybrid cloud-based variant of CoCoME did not have to be modified. Therefore, CoCoME is encapsulated in a single component. Simply the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store and WebService::Inventory::Enterprise} used by the App Client are emphasized. The entire component diagram for the hybrid cloud-based variant is available in the Technical Report \cite{SWB-469002735}. 
+ In Fig. \ref{ComponentApp}, the component diagram for this evolution scenario is shown. For adding the Mobile App client, the hybrid cloud-based variant of CoCoME did not have to be modified. Therefore, CoCoME is encapsulated in a single component. Simply the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store and WebService::Inventory::Enterprise} used by the App Client are emphasized. The entire component diagram for the hybrid cloud-based variant is available in the Technical Report \cite{HeinrichRostamiReussner2016_1000052688}. 
  \\ Fig. \ref{ComponentApp} indicates that the AppShop requires an adapter to access the web services provided by CoCoME. This is because CoCoME uses SOAP/WS*-based web services which are not compatible with the technology used to implement the AppShop Client. A more detailed introduction about the technology used to implement the Mobile App Client can be found in \cite{schnabel}. 
   
  \begin{figure}[!h]
@@ -114,13 +114,24 @@ Developing the Mobile App Client as an extension of CoCoME requires additional u
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{img/appSearchSequence.png}
 	\caption{Sequence Diagram of Searching an Item in the Mobile App Client}
-	\label{SequenceApp}
+	\label{SequenceAppSearch}
 \end{figure}
 
-Fig. \ref{SequenceApp} shows the process of opening a page to search for an Item. The customer opens the \textit{WebShopClient} and clicks on the "Search" button to search for an item. To open the page, the \textit{NavigatorMenu} must call the \textit{Navigator} which creates a pagestate object and passes the object to the page. This HTML page is now presented to the customer. To fill the page with information, i.e when searching for a \textit{ProductItem}, the page uses services provided by the \textit{ServiceHolder}. In this case, the \textit{ItemService} calls the responsible REST-Service of \textit{AppShopAdapter} which in turn retrieves the necessary information from the WSDL services provided by CoCoME.
+Fig. \ref{SequenceAppSearch} shows the process of opening a page to search for an Item. The customer opens the \textit{WebShopClient} and clicks on the "Search" button to search for an item. To open the page, the \textit{NavigatorMenu} must call the \textit{Navigator} which creates a pagestate object and passes the object to the page. This HTML page is now presented to the customer. To fill the page with information, i.e when searching for a \textit{ProductItem}, the page uses services provided by the \textit{ServiceHolder}. In this case, the \textit{ItemService} calls the responsible REST-Service of \textit{AppShopAdapter} which in turn retrieves the necessary information from the WSDL services provided by CoCoME.
+
+
+Fig. \ref{SequenceAppSale} demonstrates how the Mobile App Client processes sales. First, the customer searches for items (according to Fig. \ref{SequenceAppSearch}). By clicking on the desired Item, the according \textit{ItemPage} is shown. This page carries information about the Item. Here, the customer decides whether the Item should be added to the Shopping Cart or not. The last steps are repeated until the customer decides to proceed to the checkout. If not logged in, the customer gets forwarded to the \textit{LoginPage}. When successfully logged in, the customer clicks the \textit{BuyNow}-Button. The Sale process is finished as soon as the backend (CoCoME) has processed the sale.
 
 
 
+
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{img/ProcessAppSale.png}
+	\caption{Sequence Diagram of Processing a Sale}
+	\label{SequenceAppSale}
+\end{figure}
+
+\newpage
 
 \section{Setting up a Docker environment} \label{Docker}
 
@@ -147,6 +158,8 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 
 	
 \section{Using Microservices Technology} \label{MS}
+
+Info teils aus \cite{sommer}
 	\begin{itemize}
 		\item je microservice absatz mit entsprechenden Sequenzendiagram %fertig machen der implementierung
 		\item frontend? muss dazu auch das gemacht werden?

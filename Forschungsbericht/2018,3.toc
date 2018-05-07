@@ -9,13 +9,15 @@
 \contentsline {section}{\numberline {3.1}Adding a Mobile App Client}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Use Cases of the Mobile App}{7}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Design of the Mobile App}{11}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Setting up a Docker environment}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Using Microservices Technology}{13}{section.3.3}
+\contentsline {section}{\numberline {3.2}Setting up a Docker environment}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}Using Microservices Technology}{14}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Products}{14}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Stores}{14}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Enterprise}{14}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Reports}{14}{subsection.3.3.4}
-\contentsline {chapter}{\numberline {4}Implementation of Evolution Scenarios}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Docker}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Mobile App}{17}{section.4.2}
-\contentsline {chapter}{\numberline {5}Conclusion}{18}{chapter.5}
+\contentsline {subsection}{\numberline {3.3.3}Enterprise}{15}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Reports}{15}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Implementation of Evolution Scenarios}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Docker}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Adding a Mobile App Client}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}AppShop Adapter API}{18}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Using Microservice Technology}{18}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{20}{chapter.5}
