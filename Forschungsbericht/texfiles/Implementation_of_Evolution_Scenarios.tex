@@ -2,7 +2,7 @@
 This chapter describes implementation details for realizing the Docker environment \ref{DockerImplementation}, the Mobile App Client  for the existing hybrid cloud-based variant of CoCoME (\ref{AppImplementation}) and the Microservice-based variant (\ref{MicroserviceImplementation}).
 
 
-\section{Docker}\label{DockerImplementation}
+\section{Using a Docker Environment}\label{DockerImplementation}
  	As shown in figure \ref*{Deploym_CoCoME} the docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER} and correspond to the given by the CoCoME deplyoment setup. By default, Glassfish provides a Derby DB that is connected to the server Adapter using Java Database Conectivity (JDBS) interface.\\
  	\begin{figure}[h]
  		\centering
@@ -70,15 +70,3 @@ This chapter describes implementation details for realizing the Docker environme
  
  
  \section{Using Microservice Technology}\label{MicroserviceImplementation}
- 
-\begin{figure}[h]
-	\includegraphics[width = \textwidth]{img/seqProductCreate.png}
-	\caption{Sequenze Diagram for creation of new Products}
-	\label{seqCreateProduct}
-\end{figure}
-
-\begin{figure}[h]
-	\includegraphics[width = \textwidth]{img/SeqProductOrderEntry.png}
-	\caption{Sequenze Diagram for creation of new Product Orders}
-	\label{seqProductOrder}
-\end{figure}
