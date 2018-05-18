@@ -3,7 +3,7 @@ This chapter describes implementation details for realizing the Docker environme
 
 
 \section{Using a Docker Environment}\label{DockerImplementation}
- 	As shown in figure \ref*{Deploym_CoCoME} the docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER} and correspond to the given by the CoCoME deplyoment setup. By default, Glassfish provides a Derby DB that is connected to the server Adapter using Java Database Conectivity (JDBS) interface.\\
+ 	As shown in Fig. \ref*{Deploym_CoCoME}, the docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER}. By default, Glassfish provides a Derby DB that is connected to the Service Adapter using Java Database Conectivity (JDBS) interface.
  	\begin{figure}[h]
  		\centering
  		\includegraphics[width = 0.8\textwidth]{img/docker_Container_Deployment.png}
@@ -11,7 +11,8 @@ This chapter describes implementation details for realizing the Docker environme
  		\label{Deploym_CoCoME}
  	\end{figure}
  	
- 	CoCoME is deployed inside the docker container on the same way it is usually deployed. This means the maven generated archive files \textit{cloud-web-frontend},\textit{enterprise-logic-ear},\textit{store-logic-ear}\textit{cloud-registry-sevice} and \textit{service-adapter-ear} are deployed to the servers with the following assignment:
+ 	The deployment assignment within the Docker environment is identical to the one specified in CoCoME deployment guide.
+ 	This means the maven generated archive files \textit{cloud-web-frontend},\textit{enterprise-logic-ear},\textit{store-logic-ear}\textit{cloud-registry-sevice} and \textit{service-adapter-ear} are deployed on the servers by using the following assignment:
  	\begin{figure}[H]
  		\centering
  		\begin{tabular}{p{0.25\textwidth}|p{0.01\textwidth}p{0.25\textwidth}}
@@ -26,9 +27,8 @@ This chapter describes implementation details for realizing the Docker environme
  		\caption{Assignment of archive files to Servers}
  		\label{table_assignment}
  	\end{figure}
- 	\ref{table_assignment} demonstrates the assignment between the archive files and the servers as it is implemented and also recommended by the CoCoME deployment guide. This information is also represented in Fig. 2. As mentioned earlier, there are two versions of this Docker project. Both deploy the CoCoME main program with this assignment.\\ \\
- 	
- 	In addition, the fast version can be extends by the pickup shop\footnote{\url{https://github.com/cocome-community-case-study/cocome-cloud-jee-web-shop}}. This pickup-shop runs inside a separate container which is shown in figure \ref{Deploym_Pickup}.  
+    As mentioned earlier, there are two versions of this Docker project.\\
+ 	 The fast version can be extended by the Pick-Up shop\footnote{\url{https://github.com/cocome-community-case-study/cocome-cloud-jee-web-shop}}. This Pick-Up shop runs inside a separate Docker container which is shown in figure \ref{Deploym_Pickup}.  
  	\begin{figure}[h]
  		\centering
  		\includegraphics[width = 0.4\textwidth]{img/docker_Container_PickUP.png}
@@ -46,13 +46,13 @@ This chapter describes implementation details for realizing the Docker environme
  		\caption{Assignment archive files to Servers}
  		\label{table_assignment_pickup}
  	\end{figure}
- 	To control the start of both containers, precisely the CoCoME and the Pick Up Shop, another specific file is needed: the Docker Compose file. It ensures that the CoCoME Container is active, before the pickup-shop container is starting. This is necessary as the Pickup Shop requires a running instance of CoCoME to register itself.\\
- 	Also CoCoME runs without the pickup-shop, the pickup-shop does not work without an running instance of CoCoME.\\
- 	Both containers need to communicate with each other. By default, docker prohibits any outgoing and ingoing communication from an in a container. This is solved by opening specific ports through which the communication is possible. Which ports the containers can use is specified in the Docker Compose file as well.
+ 	To control the start of both containers, precisely the CoCoME and the Pick-Up Shop, another specific file is needed: the Docker Compose file. It ensures that the CoCoME Container is active, before the Pick-Up Shop container starts. This is necessary as the Pickup Shop requires a running instance of CoCoME to register itself.\\
+ 	Whereas CoCOME does not require the Pick-Up Shop, the inversion is not corrext.
+ 	Both containers need to communicate with each other. By default, docker prohibits any outgoing and ingoing communication from and in a container. This is solved by opening specific ports through which the communication is possible. Which ports the containers can use is specified in the Docker Compose file as well.
  	
  	
  \section{Adding a Mobile App Client}\label{AppImplementation}
- Adding a Mobile App Client did not require a modification within the hybrid cloud-based variant of CoCoME \cite{HeinrichRostamiReussner2016_1000052688}. The implementation was done using the Cordova framework and OnsenUI to provide a multi OS compatible backend and UI \cite{schnabel}. The App itself is written in Typescript/Javascript. Fig. \ref{App_ClassDiagram} shows the principal classes and their relationships.
+ Adding a Mobile App Client did not require a modification within the hybrid cloud-based variant of CoCoME. The implementation was done using the Cordova framework and OnsenUI to provide a multi OS compatible backend and UI \cite{schnabel}. The App itself is written in Typescript/Javascript. Fig. \ref{App_ClassDiagram} shows the principal classes and their relationships.
  \\
   The \textit{Navigator} is the primary class that manages the pages. The pages consist of two components: The \textit{Page} itself and its \textit{PageState}. The \textit{PageState} is used to store and transfer the current status of a page. There are currently six different pages available: \textit{IndexPage}, \textit{SearchPage}, \textit{ItemPage}, \textit{CheckoutPage}, \textit{CartPage} and \textit{LoginPage}. For the sake of clarity, they are subsumed under the generic terms \textit{ConcretePage} and \textit{ConcretePageState}. 
   \\
@@ -73,12 +73,12 @@ This chapter describes implementation details for realizing the Docker environme
  
 \begin{figure}[h]
 	\includegraphics[width = \textwidth]{img/seqProductCreate.png}
-	\caption{Sequenze Diagram for creation of new Products}
+	\caption{Sequence Diagram \textit{Creating a new Product}}
 	\label{seqCreateProduct}
 \end{figure}
 
 \begin{figure}[h]
 	\includegraphics[width = \textwidth]{img/SeqProductOrderEntry.png}
-	\caption{Sequenze Diagram for creation of new Product Orders}
+	\caption{Sequence Diagram \textit{Creating new Product Order}}
 	\label{seqProductOrder}
 \end{figure}

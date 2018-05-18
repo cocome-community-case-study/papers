@@ -8,10 +8,10 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Extended technology stack CoCoME}}{14}{figure.3.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Assignment of archive files to Servers}}{16}{figure.4.2}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Assignment archive files to Servers}}{16}{figure.4.4}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Deployment diagram CoCoME}}{17}{figure.4.1}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Assignment archive files to Servers}}{17}{figure.4.4}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Deployment diagram CoCoME Pickup Shop}}{18}{figure.4.3}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Primary Classes of the App}}{19}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Sequenze Diagram for creation of new Products}}{20}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Sequenze Diagram for creation of new Product Orders}}{21}{figure.4.7}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Sequence Diagram \textit {Creating a new Product}}}{20}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sequence Diagram \textit {Creating new Product Order}}}{21}{figure.4.7}
 \addvspace {10\p@ }
