@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  18 MAY 2018 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  18 MAY 2018 11:00
 entering extended mode
 **./2018,3.tex
 (2018,3.tex
@@ -2231,10 +2231,10 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 1.
  [6]
 chapter 3.
-<img/UseCaseApp.png, id=209, 1369.115pt x 840.13875pt>
-File: img/UseCaseApp.png Graphic file (type png)
-<use img/UseCaseApp.png>
-Package pdftex.def Info: img/UseCaseApp.png  used on input line 9. on input lin
+<img/appUseCase.png, id=209, 1369.115pt x 840.13875pt>
+File: img/appUseCase.png Graphic file (type png)
+<use img/appUseCase.png>
+Package pdftex.def Info: img/appUseCase.png  used on input line 9. on input lin
 e 9.
 Package pdftex.def Info: Requested size: 455.24411pt x 279.34903pt on input lin
 e 9.
@@ -2288,7 +2288,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--20
                                                   
 l.42 		\item[2.]
                  The Customer enters the card number of the new credit card ...
- <./img/UseCaseApp.png>]
+ <./img/appUseCase.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 53--60
 
  []
@@ -2355,12 +2355,12 @@ e three web ser-vices \T1/LinuxLibertineT-TLF/m/it/12 Web-Ser-vice::Inventory::
 LoginManager,
  []
 
-<img/appComponent.png, id=233, 578.16pt x 357.7365pt>
+<img/appComponent.png, id=233, 592.614pt x 370.0224pt>
 File: img/appComponent.png Graphic file (type png)
 <use img/appComponent.png>
 Package pdftex.def Info: img/appComponent.png  used on input line 105. on input
  line 105.
-Package pdftex.def Info: Requested size: 455.24411pt x 281.68076pt on input lin
+Package pdftex.def Info: Requested size: 455.24411pt x 284.25752pt on input lin
 e 105.
 
 Overfull \hbox (2.10178pt too wide) in paragraph at lines 110--111
@@ -2370,7 +2370,7 @@ y::Enterprise \T1/LinuxLibertineT-TLF/m/n/12 (-20) and pro-vides a Rest Api whi
 ch
  []
 
-<img/appSearchSequence.png, id=234, 763.1712pt x 419.8887pt>
+<img/appSearchSequence.png, id=235, 763.1712pt x 419.8887pt>
 File: img/appSearchSequence.png Graphic file (type png)
 <use img/appSearchSequence.png>
 Package pdftex.def Info: img/appSearchSequence.png  used on input line 113. on 
@@ -2386,13 +2386,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.119 
-       <./img/appComponent.png (PNG copy)>]
-<img/ProcessAppSale.png, id=242, 799.3062pt x 443.0151pt>
-File: img/ProcessAppSale.png Graphic file (type png)
-<use img/ProcessAppSale.png>
-Package pdftex.def Info: img/ProcessAppSale.png  used on input line 127. on inp
+       <./img/appComponent.png>]
+<img/appProcessSale.png, id=244, 800.0289pt x 470.4777pt>
+File: img/appProcessSale.png Graphic file (type png)
+<use img/appProcessSale.png>
+Package pdftex.def Info: img/appProcessSale.png  used on input line 127. on inp
 ut line 127.
-Package pdftex.def Info: Requested size: 455.24411pt x 252.3252pt on input line
+Package pdftex.def Info: Requested size: 455.24411pt x 267.7228pt on input line
  127.
 
 
@@ -2404,8 +2404,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.132 \newpage
-               <./img/appSearchSequence.png (PNG copy)>]
-<img/tech_stack_CoCoME.png, id=248, 550.055pt x 532.99126pt>
+               <./img/appSearchSequence.png>]
+<img/tech_stack_CoCoME.png, id=251, 550.055pt x 532.99126pt>
 File: img/tech_stack_CoCoME.png Graphic file (type png)
 <use img/tech_stack_CoCoME.png>
 Package pdftex.def Info: img/tech_stack_CoCoME.png  used on input line 140. on 
@@ -2422,9 +2422,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.154 	
-        <./img/ProcessAppSale.png (PNG copy)>] [14pdfTeX warning (ext4): destin
-ation with the same identifier (name{figure.3.5}) has been already used, duplic
-ate ignored
+        <./img/appProcessSale.png>] [14pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.3.5}) has been already used, duplicate ignored
+
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
@@ -2432,7 +2432,7 @@ l.180 		\subsection
                    {Reports} <./img/tech_stack_CoCoME.png>])
 (texfiles/Implementation_of_Evolution_Scenarios.tex [15]
 chapter 4.
-<img/docker_Container_Deployment.png, id=268, 697.60625pt x 688.5725pt>
+<img/docker_Container_Deployment.png, id=272, 697.60625pt x 688.5725pt>
 File: img/docker_Container_Deployment.png Graphic file (type png)
 <use img/docker_Container_Deployment.png>
 Package pdftex.def Info: img/docker_Container_Deployment.png  used on input lin
@@ -2456,7 +2456,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<img/docker_Container_PickUP.png, id=272, 416.55624pt x 334.24875pt>
+<img/docker_Container_PickUP.png, id=276, 416.55624pt x 334.24875pt>
 File: img/docker_Container_PickUP.png Graphic file (type png)
 <use img/docker_Container_PickUP.png>
 Package pdftex.def Info: img/docker_Container_PickUP.png  used on input line 34
@@ -2488,7 +2488,7 @@ igure.4.1}) has been already used, duplicate ignored
 l.54  \section
               {Adding a Mobile App Client}\label{AppImplementation} <./img/dock
 er_Container_Deployment.png>]
-<img/appBasicClass.png, id=286, 728.4816pt x 330.2739pt>
+<img/appBasicClass.png, id=290, 728.4816pt x 330.2739pt>
 File: img/appBasicClass.png Graphic file (type png)
 <use img/appBasicClass.png>
 Package pdftex.def Info: img/appBasicClass.png  used on input line 64. on input
@@ -2508,15 +2508,15 @@ d, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.69 \FloatBarrier
-                   <./img/appBasicClass.png (PNG copy)>]
-<img/seqProductCreate.png, id=296, 1188.44pt x 807.015pt>
+                   <./img/appBasicClass.png>]
+<img/seqProductCreate.png, id=301, 1188.44pt x 807.015pt>
 File: img/seqProductCreate.png Graphic file (type png)
 <use img/seqProductCreate.png>
 Package pdftex.def Info: img/seqProductCreate.png  used on input line 75. on in
 put line 75.
 Package pdftex.def Info: Requested size: 455.24411pt x 309.1317pt on input line
  75.
-<img/SeqProductOrderEntry.png, id=297, 1060.96375pt x 764.8575pt>
+<img/SeqProductOrderEntry.png, id=302, 1060.96375pt x 764.8575pt>
 File: img/SeqProductOrderEntry.png Graphic file (type png)
 <use img/SeqProductOrderEntry.png>
 Package pdftex.def Info: img/SeqProductOrderEntry.png  used on input line 81. o
@@ -2601,9 +2601,9 @@ al/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/User
 s/Nikolaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/sourcesanspro/So
 urceSansPro-Bold.pfb><C:/Users/Nikolaus/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/bera/fvmr8a.pfb>
-Output written on 2018,3.pdf (23 pages, 1159947 bytes).
+Output written on 2018,3.pdf (23 pages, 1061208 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
+ 365 PDF objects out of 1000 (max. 8388607)
  66 named destinations out of 1000 (max. 500000)
  31060 words of extra memory for PDF output out of 35830 (max. 10000000)
 
