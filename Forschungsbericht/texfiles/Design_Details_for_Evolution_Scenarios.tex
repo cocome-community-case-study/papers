@@ -156,27 +156,94 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 	
 
 	
-\section{Using Microservices Technology} \label{MS}
-
-Info teils aus \cite{sommer}
-	\begin{itemize}
-		\item je microservice absatz mit entsprechenden Sequenzendiagram %fertig machen der implementierung
-		\item frontend? muss dazu auch das gemacht werden?
-		\item ein blocktext zu mehereren diagrammen oder diagramme zwischen text?
-		
+\section{Microservices Technology} \label{MS}
+	This section describes how the implementation of the usecases which are also implemented in the basic CoCoME version but also the general system design and the interaction of the microservices. In the following subsection \nameref{UsecaseSection} the realization details of different usecases is explained in detail. Further, the different usecases are allocated in the of the corresponding microservice. In the second subsection, named \nameref{archiOverviewMicro} the general architectural overview of the microservices is described.
 	
-			\item je die einzelnen module und szenarien erlaeutern in dem diese sinnvoll sind
-	\end{itemize}
-	
-		\subsection{Products}
-		abstrahieren der Produktinformationen 
+	\subsection{Usecase implementation}\label{UsecaseSection}
+	\FloatBarrier
+		\subsubsection{Orders}
+		This section describes the desgin of the \textit{Orders} microservice, which provides the main functionality for usecase 3 and usecase 4.\\
 		
-		\subsection{Stores}
-		einzelne Laeden alleinstehend abbilden um nach bedarf neue microservices alias laeden starten zu können
+		\textbf{Behavioral View on UC 3 - Order Products} \\
+		As shown in figure \ref{MS_UC3_1} and figure \ref{MS_UC3_2} this usecase is divided into two steps in the first step, user the frontend to create new OrderEntry elements. This elements are representing the different product entries at an order. It contains the informations about an the product to order and the ordering amount. They are saved in the Database until they are needed again in the second step again. 
+		In the second step, the ProductOrder element is created. This Object represents the order itself, in detail information about the ordering store, the date on which this order is submitted and a collection with the OrderEntry objects of the products which are ordered in this order. Also it set in the OrderEntry objects an reference to this ProductOrder object.
 		
-		\subsection{Enterprise}
-		aehnlich zu stroes
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 0.7\textwidth]{img/UC3_Order_Products_1_OrderEntryCreate.jpg}
+				\caption{Usecase 3 order products, part 1}
+				\label{MS_UC3_1}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC3_Order_Products_2_ProductOrderCreate.jpg}
+				\caption{Usecase 3 order products, part 2}
+				\label{MS_UC3_2}
+			\end{figure}
 		
-		\subsection{Reports}
-		stellt alleinigen aufgaben bereich dar, entsprechen undabhaengig darzustellen von anderem.
-
+		\textbf{Behavioral View on UC 4 - Receive Ordered Products} \\
+		The figure %TD paste image with reference
+		shows, the microservice first refreshes the store ProductOrder element and sets it delivery date to the in the call passed date.
+		After this, it performs for each in the assigned a rest call to the store microservice in which the store itself is stored. With that rest call, the stockitems which are representing the corresponding product in the store are increasing their available amount of the product.
+		
+			
+		\FloatBarrier
+			
+		\subsubsection{Stores}
+		
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg}
+				\caption{Usecase 1 process sale, part 1}
+				\label{MS_UC1_1}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg}
+				\caption{Usecase 1 process sale, part 2}
+				\label{MS_UC1_2}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 0.5\textwidth]{img/UC2_Manage_Express_Checkout.jpg}
+				\caption{Usecase 2 manage express mode}
+				\label{MS_UC2}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 0.9\textwidth]{img/UC7_Change_Price.jpg}
+				\caption{Usecase 7 change price}
+				\label{MS_UC7}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC8_Product_Exchange.jpg}
+				\caption{Usecase 8 product exchange}
+				\label{MS_UC8}
+			\end{figure}
+		\FloatBarrier	
+		
+		\subsubsection{Reports}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC5_Show_Stock_Report.jpg}
+				\caption{Usecase 5 show stock report}
+				\label{MS_UC5}
+			\end{figure}
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width = 1\textwidth]{img/UC6_Show_Delivery_Reports.jpg}
+				\caption{Usecase 6 show delivery report}
+				\label{MS_UC6}
+			\end{figure}
+			
+	\FloatBarrier
+	\subsection{Architectural overview}	\label{archiOverviewMicro}	
+			
