@@ -166,7 +166,12 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 		
 		\textbf{Behavioral View on UC 3 - Order Products} \\
 		As shown in figure \ref{MS_UC3_1} and figure \ref{MS_UC3_2} this usecase is divided into two steps in the first step, user the frontend to create new OrderEntry elements. This elements are representing the different product entries at an order. It contains the informations about an the product to order and the ordering amount. They are saved in the Database until they are needed again in the second step again. 
-		In the second step, the ProductOrder element is created. This Object represents the order itself, in detail information about the ordering store, the date on which this order is submitted and a collection with the OrderEntry objects of the products which are ordered in this order. Also it set in the OrderEntry objects an reference to this ProductOrder object.
+		In the second step, the ProductOrder element is created. This Object represents the order itself, in detail information about the ordering store, the date on which this order is submitted and a collection with the OrderEntry objects of the products which are ordered in this order. Also it set in the OrderEntry objects an reference to this ProductOrder object.\\
+		
+		\textbf{Behavioral View on UC 4 - Receive Ordered Products} \\
+		The figure %TD paste image with reference
+		shows, the microservice first refreshes the store ProductOrder element and sets it delivery date to the in the call passed date.
+		After this, it performs for each in the assigned a rest call to the store microservice in which the store itself is stored. With that rest call, the stockitems which are representing the corresponding product in the store are increasing their available amount of the product.
 		
 			\begin{figure}[!h]
 				\centering
@@ -182,15 +187,32 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 				\label{MS_UC3_2}
 			\end{figure}
 		
-		\textbf{Behavioral View on UC 4 - Receive Ordered Products} \\
-		The figure %TD paste image with reference
-		shows, the microservice first refreshes the store ProductOrder element and sets it delivery date to the in the call passed date.
-		After this, it performs for each in the assigned a rest call to the store microservice in which the store itself is stored. With that rest call, the stockitems which are representing the corresponding product in the store are increasing their available amount of the product.
-		
 			
 		\FloatBarrier
 			
 		\subsubsection{Stores}
+		This section describes the design of the \textit{Store} microsevice, which provides the functionality of the usecases 1, 2, 7 and 8.
+		
+		\textbf{Behavioral View on UC 1 - Process Sale} \\
+		The usecase 1 is pictured in figure \ref{MS_UC1_1} and \ref{MS_UC1_2}. As the figures divide that usecase into 2 parts this explanation will do to explain the process properly.
+		In the first step, shown in figure \ref{MS_UC1_1} the process of adding product to the sale process is shown. To add Products to a sale, at first the sale mode has to be activated in the cash desk, which is done after the startSale action is executed. This also resets the CashDesk from previous, probably not finished and canceled sale processes.
+		For adding products to the sale process, either the barcode can be scanned and submitted as one or can entered digit by digit. This barcode entering is shown in the first if construct in the loop of figure \ref{MS_UC1_1}.
+		After scanning a barcode, it is checked if there is alreade an item was added to the sale and another ine is available in stock, or if there is an item with that barcode in the stock available. In the first case, the the stock amount of that item is reduced and that item is added to the inventory and the total amount is increased. In the second case, mostly the same is done, but instead of increasing the product amount in the inventory, there is an new product added to that inventory. Otherwise, the attempt of adding an product with that barcode is quit. Subsequently, the display is updated and this Product is added to the printer output.\\
+		The second step of this usecase, shown in figure \ref{MS_UC1_2} handles the and of the sale process. The end is indicated by calling the finishSale routine, which represents pressing the finish sale button at the cashbox. After pressing that button, the display updated and it can be choosen, between paying by card or paying by cash. In both cases, first the cash desk is set to the corresponding paying mode, second the needed informations about the credit card or the overhanded cash amount is passed through. 
+		After successfully ending the payment, the printer and display is updated and the cash desk ends the sale process.\\
+		 
+		
+		\textbf{Behavioral View on UC 2 - Manage Express Checkout} \\
+		Figure \ref{MS_UC2} shows, how each cash desk performs on an external call the updateExpressLight routine. In this, the cash desk checks by itself if based on the recently proceeded the Express light should be activated or not. In consequence, the express light is set to the correct value. \\
+		
+		\textbf{Behavioral View on UC 7 - Chane Price} \\
+		As described in figure \ref{MS_UC7}, in a first step, the database element which represents the store, managed by the store manager who wants to change the price is loaded. On this, the in the store available products are filtered to find the one with the correct product id. 
+		Having the correct StockItem found, the sale price of that object can be updated. Afterwards, the StockItem object is refreshed in the database.\\
+		
+		\textbf{Behavioral View on UC 8 - Product Exchange} \\
+		The process on usecase 8 is shown in figure \ref{MS_UC8}. It starts at the end of an sale process. The microservice checks by itself if the stock amount of the sold items have reached their minimal amount. If not, nothing will happen. Otherwise, this information is passed to the appropriate EnterpriseManager. 
+		This EnterpriseManager collects in an first step all of its stores, which are also selling this the specific product.
+		If the EnterpriseManage has found at least one store which also provides that products, it figures out, which one of the possible exchange sources is the best. By reducing the stock amount of that product in this optimal store and increasing it in the store, which started the request, the product exchange is executed.
 		
 			\begin{figure}[!h]
 				\centering
@@ -229,6 +251,11 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 		\FloatBarrier	
 		
 		\subsubsection{Reports}
+		This section describes the design of the \textit{Reports} microsevice, which provides the functionality of the usecases 5 and 6
+		
+		\textbf{Behavioral View on UC 5 and Uc 6 - Show Stock Report and Show Delivery Report} \\
+		In the following, the realisation of usecase 5 and 6 are described. Usecase 5 is described in figure \ref{MS_UC5} and usecase 6 in figure \ref{MS_UC6}. 
+		In both cases, this microservice performs an rest call to receive informations from the the corresponding microservices which contains the requested informations. this informations are returned on that request and were modified to represent the information in an proper format. That format is passed back to the calling frontend.
 			
 			\begin{figure}[!h]
 				\centering

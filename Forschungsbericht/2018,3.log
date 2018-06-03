@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.15)  3 JUN 2018 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.15)  3 JUN 2018 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2257,6 +2257,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
+
+ []
+
 [14pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5
 }) has been already used, duplicate ignored
 
@@ -2269,7 +2274,7 @@ File: img/UC3_Order_Products_1_OrderEntryCreate.jpg Graphic file (type jpg)
 
 <use img/UC3_Order_Products_1_OrderEntryCreate.jpg>
 Package pdftex.def Info: img/UC3_Order_Products_1_OrderEntryCreate.jpg used on 
-input line 173.
+input line 178.
 (pdftex.def)             Requested size: 318.66948pt x 195.65384pt.
 
 <img/UC3_Order_Products_2_ProductOrderCreate.jpg, id=274, 1017.8025pt x 560.092
@@ -2277,7 +2282,7 @@ input line 173.
 File: img/UC3_Order_Products_2_ProductOrderCreate.jpg Graphic file (type jpg)
  <use img/UC3_Order_Products_2_ProductOrderCreate.jpg>
 Package pdftex.def Info: img/UC3_Order_Products_2_ProductOrderCreate.jpg used o
-n input line 180.
+n input line 185.
 (pdftex.def)             Requested size: 455.24411pt x 250.51805pt.
 
 
@@ -2290,139 +2295,160 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
                                                   
 l.191 		\FloatBarrier
                       <./img/UC3_Order_Products_1_OrderEntryCreate.jpg>]
-<img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg, id=279, 1223.57124pt x
+Underfull \hbox (badness 10000) in paragraph at lines 196--203
+
+ []
+
+
+Underfull \vbox (badness 2080) has occurred while \output is active []
+
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+7}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.203 
+       <./img/UC3_Order_Products_2_ProductOrderCreate.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--211
+
+ []
+
+
+<img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg, id=292, 1223.57124pt x
  1191.45125pt>
 File: img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg Graphic file (type
  jpg)
  <use img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg>
 Package pdftex.def Info: img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg
- used on input line 197.
+ used on input line 219.
 (pdftex.def)             Requested size: 455.24411pt x 443.28438pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg, id=280, 1015.795pt x 917.4275
+<img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg, id=293, 1015.795pt x 917.4275
 pt>
 File: img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg Graphic file (type jpg)
  <use img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg>
 Package pdftex.def Info: img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg used o
-n input line 204.
+n input line 226.
 (pdftex.def)             Requested size: 455.24411pt x 411.1587pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC2_Manage_Express_Checkout.jpg, id=281, 395.4775pt x 282.05376pt>
+<img/UC2_Manage_Express_Checkout.jpg, id=294, 395.4775pt x 282.05376pt>
 File: img/UC2_Manage_Express_Checkout.jpg Graphic file (type jpg)
 
 <use img/UC2_Manage_Express_Checkout.jpg>
 Package pdftex.def Info: img/UC2_Manage_Express_Checkout.jpg used on input line
- 211.
+ 233.
 (pdftex.def)             Requested size: 227.62206pt x 162.33888pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC7_Change_Price.jpg, id=282, 894.34125pt x 600.2425pt>
+<img/UC7_Change_Price.jpg, id=295, 894.34125pt x 600.2425pt>
 File: img/UC7_Change_Price.jpg Graphic file (type jpg)
 
 <use img/UC7_Change_Price.jpg>
-Package pdftex.def Info: img/UC7_Change_Price.jpg used on input line 218.
+Package pdftex.def Info: img/UC7_Change_Price.jpg used on input line 240.
 (pdftex.def)             Requested size: 409.71692pt x 274.98834pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC8_Product_Exchange.jpg, id=283, 1138.2525pt x 1440.38126pt>
+<img/UC8_Product_Exchange.jpg, id=296, 1138.2525pt x 1440.38126pt>
 File: img/UC8_Product_Exchange.jpg Graphic file (type jpg)
 
 <use img/UC8_Product_Exchange.jpg>
-Package pdftex.def Info: img/UC8_Product_Exchange.jpg used on input line 225.
+Package pdftex.def Info: img/UC8_Product_Exchange.jpg used on input line 247.
 (pdftex.def)             Requested size: 455.24411pt x 576.07637pt.
 
 
-LaTeX Warning: Float too large for page by 2.0016pt on input line 228.
+LaTeX Warning: Float too large for page by 2.0016pt on input line 250.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7
-}) has been already used, duplicate ignored
+[17] [18pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.229 		\FloatBarrier
-                      <./img/UC3_Order_Products_2_ProductOrderCreate.jpg>]
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8
-}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.229 		\FloatBarrier
+l.251 		\FloatBarrier
                       <./img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg
->] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.
+>] [19pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.229 		\FloatBarrier
+l.251 		\FloatBarrier
                       <./img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg>]
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 0}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.229 		\FloatBarrier
+l.251 		\FloatBarrier
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{figure.3.11}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.229 		\FloatBarrier
+l.251 		\FloatBarrier
                       <./img/UC2_Manage_Express_Checkout.jpg> <./img/UC7_Change
-_Price.jpg>] [20pdfTeX warning (ext4): destination with the same identifier (na
+_Price.jpg>] [21pdfTeX warning (ext4): destination with the same identifier (na
 me{figure.3.12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.229 		\FloatBarrier
+l.251 		\FloatBarrier
                       <./img/UC8_Product_Exchange.jpg>]
-<img/UC5_Show_Stock_Report.jpg, id=307, 874.26625pt x 368.37625pt>
+<img/UC5_Show_Stock_Report.jpg, id=321, 874.26625pt x 368.37625pt>
 File: img/UC5_Show_Stock_Report.jpg Graphic file (type jpg)
 
 <use img/UC5_Show_Stock_Report.jpg>
-Package pdftex.def Info: img/UC5_Show_Stock_Report.jpg used on input line 235.
+Package pdftex.def Info: img/UC5_Show_Stock_Report.jpg used on input line 262.
 (pdftex.def)             Requested size: 455.24411pt x 191.82092pt.
 
-<img/UC6_Show_Delivery_Reports.jpg, id=308, 904.37875pt x 345.29pt>
+<img/UC6_Show_Delivery_Reports.jpg, id=322, 904.37875pt x 345.29pt>
 File: img/UC6_Show_Delivery_Reports.jpg Graphic file (type jpg)
 
 <use img/UC6_Show_Delivery_Reports.jpg>
 Package pdftex.def Info: img/UC6_Show_Delivery_Reports.jpg used on input line 2
-42.
+69.
 (pdftex.def)             Requested size: 455.24411pt x 173.80894pt.
-)
-(./texfiles/Implementation_of_Evolution_Scenarios.tex [21
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13})
  has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1 \chapter
-            {Implementation of Evolution Scenarios}pdfTeX warning (ext4): desti
-nation with the same identifier (name{figure.3.14}) has been already used, dupl
-icate ignored
+l.274 	\FloatBarrier
+                     <./img/UC5_Show_Stock_Report.jpg>])
+(./texfiles/Implementation_of_Evolution_Scenarios.tex [23pdfTeX warning (ext4):
+ destination with the same identifier (name{figure.3.14}) has been already used
+, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.1 \chapter
-            {Implementation of Evolution Scenarios} <./img/UC5_Show_Stock_Repor
-t.jpg> <./img/UC6_Show_Delivery_Reports.jpg>]
+            {Implementation of Evolution Scenarios} <./img/UC6_Show_Delivery_Re
+ports.jpg>]
 chapter 4.
-<img/docker_Container_Deployment.png, id=317, 697.60625pt x 688.5725pt>
+<img/docker_Container_Deployment.png, id=335, 697.60625pt x 688.5725pt>
 File: img/docker_Container_Deployment.png Graphic file (type png)
 
 <use img/docker_Container_Deployment.png>
@@ -2448,7 +2474,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<img/docker_Container_PickUP.png, id=321, 416.55624pt x 334.24875pt>
+<img/docker_Container_PickUP.png, id=339, 416.55624pt x 334.24875pt>
 File: img/docker_Container_PickUP.png Graphic file (type png)
 
 <use img/docker_Container_PickUP.png>
@@ -2459,7 +2485,7 @@ Package pdftex.def Info: img/docker_Container_PickUP.png used on input line 34.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22
+[24
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
@@ -2473,7 +2499,7 @@ l.52
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.52 
-     ] [23pdfTeX warning (ext4): destination with the same identifier (name{fig
+     ] [25pdfTeX warning (ext4): destination with the same identifier (name{fig
 ure.4.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -2481,19 +2507,19 @@ ure.4.1}) has been already used, duplicate ignored
 l.54  \section
               {Adding a Mobile App Client}\label{AppImplementation} <./img/dock
 er_Container_Deployment.png>]
-<img/appBasicClass.png, id=335, 728.4816pt x 330.2739pt>
+<img/appBasicClass.png, id=354, 728.4816pt x 330.2739pt>
 File: img/appBasicClass.png Graphic file (type png)
 
 <use img/appBasicClass.png>
 Package pdftex.def Info: img/appBasicClass.png used on input line 64.
 (pdftex.def)             Requested size: 617.4248pt x 279.93787pt.
- [24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.69 \FloatBarrier
-                   <./img/docker_Container_PickUP.png>] [25pdfTeX warning (ext4
+                   <./img/docker_Container_PickUP.png>] [27pdfTeX warning (ext4
 ): destination with the same identifier (name{figure.4.5}) has been already use
 d, duplicate ignored
 
@@ -2501,11 +2527,11 @@ d, duplicate ignored
                                                   
 l.69 \FloatBarrier
                    <./img/appBasicClass.png>]) (./texfiles/Conclusion.tex
-[26
+[28
 
 ]
 chapter 5.
-) (./2018,3.bbl [27
+) (./2018,3.bbl [29
 
 ]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
@@ -2528,7 +2554,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 d-[]jee-[]microservices-[]rest /
  []
 
-) [28
+) [30
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
@@ -2541,11 +2567,11 @@ Package rerunfilecheck Info: File `2018,3.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 30738 strings out of 493029
- 601170 string characters out of 6136234
+ 30743 strings out of 493029
+ 601259 string characters out of 6136234
  753334 words of memory out of 5000000
  33350 multiletter control sequences out of 15000+600000
- 148002 words of font info for 173 fonts, out of 8000000 for 9000
+ 148273 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  82i,12n,84p,903b,692s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -2558,10 +2584,10 @@ f-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist
 /public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/bera/fvmr8a.pfb>
-Output written on 2018,3.pdf (28 pages, 2441853 bytes).
+Output written on 2018,3.pdf (30 pages, 2450033 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
  31079 words of extra memory for PDF output out of 35830 (max. 10000000)
 
