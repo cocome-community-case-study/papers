@@ -169,7 +169,7 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 		In the second step, the ProductOrder element is created. This Object represents the order itself, in detail information about the ordering store, the date on which this order is submitted and a collection with the OrderEntry objects of the products which are ordered in this order. Also it set in the OrderEntry objects an reference to this ProductOrder object.\\
 		
 		\textbf{Behavioral View on UC 4 - Receive Ordered Products} \\
-		The figure %TD paste image with reference
+		The figure 
 		shows, the microservice first refreshes the store ProductOrder element and sets it delivery date to the in the call passed date.
 		After this, it performs for each in the assigned a rest call to the store microservice in which the store itself is stored. With that rest call, the stockitems which are representing the corresponding product in the store are increasing their available amount of the product.
 		
@@ -280,9 +280,12 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 			
 	\FloatBarrier
 	\subsection{Architectural overview}	\label{archiOverviewMicro}	
-	This section describes the arcitectural design of the microservices. As can be seen in figure \ref{MS_ARch}, there are four different microservices.
-	   \begin{sidewaysfigure}[ht]
+	This section describes the architectural design of the microservices. As can be seen in figure \ref{MS_ARch}, there are four the microservices \textit{Orders}, \textit{Reports} \textit{stores} and \textit{Produkts}. The microservices provides its own user interface pages, which are be dynamically loaded. \\
+	Each of the microservices provides functionality which primary works on the database, located in that microservice. More detailed, these are for the Orders microservice functionality like creating new orders, delivering orders and showing those. The reports microservice does not possess an own database. Instead this one collects informations by rest request to the other microservices. The stores service provides functionality, needed by enterprisemanagers or storemanagers for example creating new stores or changes the sales prices for the goods. Further, this one also contains the functionality for the process sale. In detail, the cash desk with its accessories is implemented here. In microservice products functionality for creating new supplier or products is provided.
+	
+	
+	\begin{sidewaysfigure}[ht]
 	   	\includegraphics[width=\textwidth]{img/MicroserviceArchitecture.jpg}
 	   	\caption{Microservice architecture}
 	   	\label{MS_ARch}
-	   \end{sidewaysfigure}
+	\end{sidewaysfigure}

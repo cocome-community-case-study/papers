@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.6.5)  5 JUN 2018 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.15)  5 JUN 2018 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2074,7 +2074,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 1.
  [6]
 chapter 3.
-<img/appUseCase.png, id=219, 1369.115pt x 840.13875pt>
+<img/appUseCase.png, id=221, 1369.115pt x 840.13875pt>
 File: img/appUseCase.png Graphic file (type png)
 
 <use img/appUseCase.png>
@@ -2196,7 +2196,7 @@ e three web ser-vices \T1/LinuxLibertineT-TLF/m/it/12 Web-Ser-vice::Inventory::
 LoginManager,
  []
 
-<img/appComponent.png, id=243, 592.614pt x 370.0224pt>
+<img/appComponent.png, id=245, 592.614pt x 370.0224pt>
 File: img/appComponent.png Graphic file (type png)
 
 <use img/appComponent.png>
@@ -2210,7 +2210,7 @@ y::Enterprise \T1/LinuxLibertineT-TLF/m/n/12 (-20) and pro-vides a Rest Api whi
 ch
  []
 
-<img/appSearchSequence.png, id=245, 763.1712pt x 419.8887pt>
+<img/appSearchSequence.png, id=247, 763.1712pt x 419.8887pt>
 File: img/appSearchSequence.png Graphic file (type png)
 
 <use img/appSearchSequence.png>
@@ -2227,7 +2227,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
                                                   
 l.119 
        <./img/appComponent.png>]
-<img/appProcessSale.png, id=254, 800.0289pt x 470.4777pt>
+<img/appProcessSale.png, id=256, 800.0289pt x 470.4777pt>
 File: img/appProcessSale.png Graphic file (type png)
 
 <use img/appProcessSale.png>
@@ -2244,7 +2244,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
                                                   
 l.132 \newpage
                <./img/appSearchSequence.png>]
-<img/tech_stack_CoCoME.png, id=261, 550.055pt x 532.99126pt>
+<img/tech_stack_CoCoME.png, id=263, 550.055pt x 532.99126pt>
 File: img/tech_stack_CoCoME.png Graphic file (type png)
 
 <use img/tech_stack_CoCoME.png>
@@ -2277,7 +2277,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--170
                                                   
 l.170 
        <./img/tech_stack_CoCoME.png>]
-<img/UC3_Order_Products_1_OrderEntryCreate.jpg, id=277, 546.04pt x 335.2525pt>
+<img/UC3_Order_Products_1_OrderEntryCreate.jpg, id=279, 546.04pt x 335.2525pt>
 File: img/UC3_Order_Products_1_OrderEntryCreate.jpg Graphic file (type jpg)
 
 <use img/UC3_Order_Products_1_OrderEntryCreate.jpg>
@@ -2285,7 +2285,7 @@ Package pdftex.def Info: img/UC3_Order_Products_1_OrderEntryCreate.jpg used on
 input line 178.
 (pdftex.def)             Requested size: 318.66948pt x 195.65384pt.
 
-<img/UC3_Order_Products_2_ProductOrderCreate.jpg, id=278, 1017.8025pt x 560.092
+<img/UC3_Order_Products_2_ProductOrderCreate.jpg, id=280, 1017.8025pt x 560.092
 5pt>
 File: img/UC3_Order_Products_2_ProductOrderCreate.jpg Graphic file (type jpg)
  <use img/UC3_Order_Products_2_ProductOrderCreate.jpg>
@@ -2296,7 +2296,7 @@ n input line 185.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC4_Receive_Ordered_Products.jpg, id=279, 1072.005pt x 587.19376pt>
+<img/UC4_Receive_Ordered_Products.jpg, id=281, 1072.005pt x 587.19376pt>
 File: img/UC4_Receive_Ordered_Products.jpg Graphic file (type jpg)
 
 <use img/UC4_Receive_Ordered_Products.jpg>
@@ -2348,7 +2348,7 @@ Underfull \vbox (badness 3000) has occurred while \output is active []
  [17
 
 ]
-<img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg, id=302, 1223.57124pt x
+<img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg, id=304, 1223.57124pt x
  1191.45125pt>
 File: img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg Graphic file (type
  jpg)
@@ -2357,7 +2357,7 @@ Package pdftex.def Info: img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg
  used on input line 226.
 (pdftex.def)             Requested size: 455.24411pt x 443.28438pt.
 
-<img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg, id=303, 1015.795pt x 917.4275
+<img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg, id=305, 1015.795pt x 917.4275
 pt>
 File: img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg Graphic file (type jpg)
  <use img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg>
@@ -2368,7 +2368,7 @@ n input line 233.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC2_Manage_Express_Checkout.jpg, id=304, 395.4775pt x 282.05376pt>
+<img/UC2_Manage_Express_Checkout.jpg, id=306, 395.4775pt x 282.05376pt>
 File: img/UC2_Manage_Express_Checkout.jpg Graphic file (type jpg)
 
 <use img/UC2_Manage_Express_Checkout.jpg>
@@ -2379,7 +2379,7 @@ Package pdftex.def Info: img/UC2_Manage_Express_Checkout.jpg used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC7_Change_Price.jpg, id=305, 894.34125pt x 600.2425pt>
+<img/UC7_Change_Price.jpg, id=307, 894.34125pt x 600.2425pt>
 File: img/UC7_Change_Price.jpg Graphic file (type jpg)
 
 <use img/UC7_Change_Price.jpg>
@@ -2389,7 +2389,7 @@ Package pdftex.def Info: img/UC7_Change_Price.jpg used on input line 247.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/UC8_Product_Exchange.jpg, id=306, 1138.2525pt x 1440.38126pt>
+<img/UC8_Product_Exchange.jpg, id=308, 1138.2525pt x 1440.38126pt>
 File: img/UC8_Product_Exchange.jpg Graphic file (type jpg)
 
 <use img/UC8_Product_Exchange.jpg>
@@ -2436,14 +2436,14 @@ me{figure.3.13}) has been already used, duplicate ignored
                                                   
 l.258 		\FloatBarrier
                       <./img/UC8_Product_Exchange.jpg>]
-<img/UC5_Show_Stock_Report.jpg, id=326, 874.26625pt x 368.37625pt>
+<img/UC5_Show_Stock_Report.jpg, id=328, 874.26625pt x 368.37625pt>
 File: img/UC5_Show_Stock_Report.jpg Graphic file (type jpg)
 
 <use img/UC5_Show_Stock_Report.jpg>
 Package pdftex.def Info: img/UC5_Show_Stock_Report.jpg used on input line 269.
 (pdftex.def)             Requested size: 455.24411pt x 191.82092pt.
 
-<img/UC6_Show_Delivery_Reports.jpg, id=327, 904.37875pt x 345.29pt>
+<img/UC6_Show_Delivery_Reports.jpg, id=329, 904.37875pt x 345.29pt>
 File: img/UC6_Show_Delivery_Reports.jpg Graphic file (type jpg)
 
 <use img/UC6_Show_Delivery_Reports.jpg>
@@ -2463,12 +2463,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.14})
                                                   
 l.281 	\FloatBarrier
                      <./img/UC5_Show_Stock_Report.jpg>]
-<img/MicroserviceArchitecture.jpg, id=334, 1629.08624pt x 915.42pt>
+<img/MicroserviceArchitecture.jpg, id=336, 1629.08624pt x 915.42pt>
 File: img/MicroserviceArchitecture.jpg Graphic file (type jpg)
 
 <use img/MicroserviceArchitecture.jpg>
 Package pdftex.def Info: img/MicroserviceArchitecture.jpg used on input line 28
-5.
+8.
 (pdftex.def)             Requested size: 617.4248pt x 346.94131pt.
 )
 (./texfiles/Implementation_of_Evolution_Scenarios.tex [23pdfTeX warning (ext4):
@@ -2488,7 +2488,7 @@ l.1 \chapter
             {Implementation of Evolution Scenarios} <./img/MicroserviceArchitec
 ture.jpg>]
 chapter 4.
-<img/docker_Container_Deployment.png, id=346, 697.60625pt x 688.5725pt>
+<img/docker_Container_Deployment.png, id=348, 697.60625pt x 688.5725pt>
 File: img/docker_Container_Deployment.png Graphic file (type png)
 
 <use img/docker_Container_Deployment.png>
@@ -2514,7 +2514,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<img/docker_Container_PickUP.png, id=350, 416.55624pt x 334.24875pt>
+<img/docker_Container_PickUP.png, id=352, 416.55624pt x 334.24875pt>
 File: img/docker_Container_PickUP.png Graphic file (type png)
 
 <use img/docker_Container_PickUP.png>
@@ -2547,7 +2547,7 @@ ure.4.1}) has been already used, duplicate ignored
 l.54  \section
               {Adding a Mobile App Client}\label{AppImplementation} <./img/dock
 er_Container_Deployment.png>]
-<img/appBasicClass.png, id=365, 728.4816pt x 330.2739pt>
+<img/appBasicClass.png, id=367, 728.4816pt x 330.2739pt>
 File: img/appBasicClass.png Graphic file (type png)
 
 <use img/appBasicClass.png>
@@ -2566,10 +2566,22 @@ d, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.69 \FloatBarrier
-                   <./img/appBasicClass.png>]) (./texfiles/Conclusion.tex
-[29
+                   <./img/appBasicClass.png>]
+<img/projectStructure_Micro.png, id=378, 524.96124pt x 90.3375pt>
+File: img/projectStructure_Micro.png Graphic file (type png)
 
-]
+<use img/projectStructure_Micro.png>
+Package pdftex.def Info: img/projectStructure_Micro.png used on input line 79.
+(pdftex.def)             Requested size: 364.19667pt x 62.67477pt.
+) (./texfiles/Conclusion.tex [29
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) 
+has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1 \chapter
+            {Conclusion} <./img/projectStructure_Micro.png>]
 chapter 5.
 ) (./2018,3.bbl [30
 
@@ -2607,11 +2619,11 @@ Package rerunfilecheck Info: File `2018,3.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 30797 strings out of 493029
- 602422 string characters out of 6136235
- 753977 words of memory out of 5000000
- 33393 multiletter control sequences out of 15000+600000
- 148273 words of font info for 175 fonts, out of 8000000 for 9000
+ 30807 strings out of 493029
+ 602687 string characters out of 6136234
+ 754034 words of memory out of 5000000
+ 33398 multiletter control sequences out of 15000+600000
+ 148544 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  82i,12n,84p,903b,692s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -2624,10 +2636,10 @@ f-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist
 /public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /adobe/sourcesanspro/SourceSansPro-Bold.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/bera/fvmr8a.pfb>
-Output written on 2018,3.pdf (31 pages, 2839792 bytes).
+Output written on 2018,3.pdf (31 pages, 2851499 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 357 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 31089 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 31094 words of extra memory for PDF output out of 35830 (max. 10000000)
 
