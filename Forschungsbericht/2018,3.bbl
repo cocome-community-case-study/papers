@@ -6,6 +6,12 @@ R.~Heinrich, K.~Rostami, and R.~Reussner.
   information system evolution.
 \newblock Technical Report~2, 2016.
 
+\bibitem{herold2008}
+S.~Herold et~al.
+\newblock {CoCoME} -- the common component modeling example.
+\newblock In {\em The Common Component Modeling Example}, pages 16--53.
+  Springer, 2008.
+
 \bibitem{olsson2012climbing}
 H.~H. Olsson, H.~Alahyari, and J.~Bosch.
 \newblock Climbing the" stairway to heaven"--a mulitiple-case study exploring
@@ -19,11 +25,5 @@ J.~Schnabel.
 \newblock Mobile application client for a cloud based software system.
 \newblock
   \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-app-shop/blob/master/doc/SQEE1617_MobileApp_Schnabel.pdf}.
-
-\bibitem{sommer}
-N.~Sommer.
-\newblock Erweiterung und wartung einer cloud-basierten jee-architektur.
-\newblock
-  \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-microservices-rest/blob/master/doc/report.pdf}.
 
 \end{thebibliography}
