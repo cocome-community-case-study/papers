@@ -106,7 +106,7 @@ Developing the Mobile App Client as an extension of CoCoME requires additional u
 	\caption{Component Diagram of the CoCoME Ecosystem After Adding the Mobile App Client}
 	\label{ComponentApp}
 \end{figure}
-
+\noindent
   The \textit{AppShopAdapter} consumes the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store} and \textit{WebService::Inventory::Enterprise} and provides a Rest Api which is used by the actual \textit{AppShop}. The Rest Api contains endpoints to retrieve and process Credit Card, Enterprise and StockItem information. To implement \emph{UC14-16}, the Api also provides endpoints for user management and processing sales. 
   
 \begin{figure}[!h]
@@ -114,10 +114,10 @@ Developing the Mobile App Client as an extension of CoCoME requires additional u
 	\caption{Sequence Diagram of Searching an Item in the Mobile App Client}
 	\label{SequenceAppSearch}
 \end{figure}
-
+\noindent
 Fig. \ref{SequenceAppSearch} shows the process of opening a page to search for an Item. The customer opens the \textit{WebShopClient} and triggers the "Search" function to search for an item. To open the page, the \textit{NavigatorMenu} must call the \textit{Navigator} which creates a pagestate object and passes the object to the page. This HTML page is now presented to the customer. To fill the page with information, i.e when searching for a \textit{ProductItem}, the page uses services provided by the \textit{ServiceHolder}. In this case, the \textit{ItemService} calls the responsible REST-Service of \textit{AppShopAdapter} which in turn retrieves the necessary information from the WSDL services provided by CoCoME.
 
-
+\noindent
 Fig. \ref{SequenceAppSale} demonstrates how the Mobile App Client processes sales.  For the sake of clarity, the digram is simplified and only contains the most important calls. First, the customer searches for items (according to Fig. \ref{SequenceAppSearch}). By clicking on the desired Item, the according \textit{ItemPage} is shown. This page carries information about the Item. Here, the customer decides whether the Item should be added to the Shopping Cart or not. The last steps are repeated until the customer decides to proceed to the checkout. If not logged in, the customer gets forwarded to the \textit{LoginPage}. When successfully logged in, the customer clicks the \textit{BuyNow}-Button. The Sale process is finished as soon as the backend (CoCoME) has processed the sale.
 
 
@@ -141,34 +141,40 @@ As shown in Fig. \ref{techStack}, using a Docker Environment affects the technol
 		\caption{Extended technology stack CoCoME}
 		\label{techStack}
 	\end{figure}
-	
+\noindent	
 The Dockerfile defines an environment based on the latest version of Ubuntu 16:04. Maven, Git and Java are also installed using the standard Ubuntu package manager.\\
 Git has two purposes: On the one hand it is used to download the most recent version of CoCoME.	On the other hand, it is used to download a prefabricated version of Glassfish that already includes domains and other adjustments required for CoCoME. Java is required by Glassfish and CoCoME as they need the Java Virtual Machine. Maven is needed to deploy the latest version of CoCoME onto the provided Glassfish servers.
-	
-	
-	During the development, it was decided to implement and provide two different versions. The first version always pulls the most recent CoCoME source code from GitHub, downloads the entire dependencies with Maven, compiles and builds the project and finally deploys CoCoME on the Glassfish servers. As a consequence, creating and starting a Docker Container takes about one hour.\\
-	In contrast, the second version only pulls a prefabricated version of CoCoME from GitHub. 
-	Therefore, pulling the source code up to building the project is skipped. Maven does not have to be included in the technology stack. Solely, deploying CoCoME on the Glassfish server is necessary.\\
-	This reduces the deployment time to a few minutes but has a disadvantage: The prefabricated version is updated manually. Therefore, it is sometime not the most recent version.\\
-	By providing both, a fast deploying version and a current version, the user can choose what's the best for its situation.
+\noindent
+During the development, it was decided to implement and provide two different versions. The first version always pulls the most recent CoCoME source code from GitHub, downloads the entire dependencies with Maven, compiles and builds the project and finally deploys CoCoME on the Glassfish servers. As a consequence, creating and starting a Docker Container takes about one hour.\\
+In contrast, the second version only pulls a prefabricated version of CoCoME from GitHub. 
+Therefore, pulling the source code up to building the project is skipped. Maven does not have to be included in the technology stack. Solely, deploying CoCoME on the Glassfish server is necessary.\\
+This reduces the deployment time to a few minutes but has a disadvantage: The prefabricated version is updated manually. Therefore, it is sometime not the most recent version.\\
+By providing both, a fast deploying version and a current version, the user can choose what's the best for its situation.
 	
 
 	
 
 	
 \section{Microservices Technology} \label{MS}
-	This section describes the implementation of the usecases defined in the basic CoCoME version, described in CoCoME -- the common component modeling examlpe \cite[p.4-10]{herold2008}. In the following subsection the realization details of different usecases are explained in detail. Further, the different usecases are allocated in the sections of the corresponding microservices. In a second subsection, named \nameref{archiOverviewMicro}, the general architectural overview of the microservices is described.
+	In this section we provide a brief design documentation of the use cases that are defined in the hybrid cloud-based variant of CoCoME \cite{herold2008}(p.4-10).
+	The following subsections are divided into the Microservices and the corresponding Use Cases. Sec. \ref{archiOverviewMicro} describes the general architectural overview of the Microservice variant of CoCoME.
 	
-	\subsection{Usecase implementation}\label{UsecaseSection}
+
+%TODO  Hier weiter
+	
+
 	\FloatBarrier
-		\subsubsection{Orders}
-		This section describes the desgin of the usecases implemented in the \textit{Orders} microservice. It provides main parts of the functionality for the usecases 3 and 4.\\
-		
-		\textbf{Behavioral View on UC 3 - Order Products} \\
-		As shown in figure \ref{MS_UC3_1} and figure \ref{MS_UC3_2} this usecase is divided into two steps. In the first step, a user uses the frontend to create new OrderEntry elements. This elements are representing the different product entries at an order. It contains all informations about the product to order but also the ordering amount. They are saved in the Database until they are needed again in the next step again. 
-		In the second step, a ProductOrder element is created. This Object represents the order itself with information about the ordering store, the date on which this order is submitted and a collection with the previously created OrderEntry objects  which are handled in this order. Also it set an reference to this ProductOrder object in the OrderEntry objects.\\
-		
-		\textbf{Behavioral View on UC 4 - Receive Ordered Products} \\
+		\subsection{Orders}
+		This section describes the design of the use cases implemented in the \textit{Orders} Microservice that provides main parts of the functionality for UC 3 and UC 4.\\
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 3 - Order Products} \\
+		For better understanding, UC 3 is divided in two steps. The first part is described in Fig. \ref{MS_UC3_1}: A user chooses the product items to order and the corresponding amount. Each \textit{ProductOrder} is stored in the \textit{ProductOrderRepository} as a \textit{OrderEntry}. In the second part (Fig. \ref{MS_UC3_2}), the  \textit{OrderEntries} are wrapped in a single \textit{ProductOrder} element that additionally contains information about the store and the date of the order. When the user presses the button \textit{Order}, the \textit{OrderManagement} iterates over the collection of \textit{OrderEntries} and sets a reference to the actual \textit{ProductOrder}.
+	
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 4 - Receive Ordered Products} \\
+		//%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch
 		The figure \ref{MS_UC4} shows, that first the ProductOrder element is refreshed and the delivery date is set to the passed date.
 		After this, it performs for each OrderEntry a rest call to the store microservice in which the store itself is represented. With that rest call, the StockItem, which is representing the corresponding product in the store ,is increased the amount of available products.
 		
@@ -196,26 +202,35 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 			
 		\FloatBarrier
 			
-		\subsubsection{Stores}
-		This section describes the design of the \textit{Store} microsevice, which provides the functionality of the usecases 1, 2, 7 and 8.
-		
-		\textbf{Behavioral View on UC 1 - Process Sale} \\
-		The usecase 1 is pictured in figure \ref{MS_UC1_1} and \ref{MS_UC1_2}. As the figures divide that usecase into 2 parts this explanation will do to explain the process properly.
-		In the first step, shown in figure \ref{MS_UC1_1}, the process of adding product to the sale process is shown. To add Products to a sale, at first the sale mode has to be activated in the cash desk, which is done after the startSale action is executed. This also resets the CashDesk from previous, probably canceled sale processes.
-		For adding products to the sale process, either the barcode can be scanned and submitted in one step or can entered digit by digit by using a keyboard. This barcode entering is shown in the first if construct in the loop of figure \ref{MS_UC1_1}.
-		After scanning a barcode, it is checked if there already was an item added to the sale and if another one is available in stock, or if there is an item with that barcode in the stock available. In the first case, the stock amount of that item is reduced and that item amount is increased in the inventory and the total amount is increased. In the second case, mostly the same is done, but instead of increasing the product amount in the inventory, there is an new product added to that inventory. Otherwise, the attempt of adding an product with that barcode is quit. Subsequently, the display is updated and this Product is added to the printer output.\\
-		The second step of this usecase, shown in figure \ref{MS_UC1_2} handles the end of the sale process. Ending an sale process is indicated by calling the finishSale routine, which represents pressing the finish sale button at the cashbox. After pressing this button, the display is updated and it can be choosen, between paying by card or paying by cash. In both cases, first the cash desk is set to the corresponding paying mode, second the needed informations about the credit card or the overhanded cash amount is passed through and checked. 
-		After successfully ending the payment, the printer and display are updated and the cash desk ends the sale process.\\
-		 
-		
+		\subsection{Stores}
+			This section describes the design of the use cases implemented in the \textit{Store} Microservice that provides main parts of the functionality for UC 1, UC 2, UC 7 and UC 8.\\
+	
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 1 - Process Sale} \\
+		Again UC 1 is divided in two parts (Fig. \ref{MS_UC1_1} and Fig. \ref{MS_UC1_2}).
+		The first part describes how a user can add products to the sale process. When the \textit{startSale} action is executed, the sale mode is activated and the \textit{CashDesk} is resetted from a previous, probably cancelled sale processes. To add products to the sale process, the user can either enter the barcode digit by digit using the keyboard or scan the barcode using a \textit{Scanner}. Further, the user can choose how many products s/he wants to purchase. This process is depicted in the inner loop. 
+		\\
+		Several checks are executed when successfully entering the barcode: If an item with the same barcode was already added to the sale, then the total amount for this item is increased by the second purchase amount. If not, the item is added to the sale, provided that an item with this barcode exists. In both cases, the availability of the item amount in the stock is checked and reduced. If one of the conditions is violated, the attempt of adding a product with the provided barcode an amount is quit. 
+		Subsequently, the display is updated and the product information is added to the printer output.
+		\\
+		The second part of this use case, shown in Fig. \ref{MS_UC1_2}, handles the end of the sale process. By calling the \textit{finishSale} routine when pressing the button \textit{FinishSale}, the display is updated. Now, the user needs to choose between paying by card or cash and the \textit{CashDesk} is set to the corresponding paying mode. In case the user wants to pay by credit card, s/he needs to enter the credit card details. In the other case, the cash amount is entered. In both cases, the information is checked to accuracy.
+		After successfully ending the payment, the printer and display are updated and the \textit{CashDesk} ends the sale process.
+
+		\noindent
+		\\
 		\textbf{Behavioral View on UC 2 - Manage Express Checkout} \\
-		Figure \ref{MS_UC2} shows, how each cash desk performs on an external call the updateExpressLight routine. In this, the cash desk checks by itself if based on the recently proceeded sales the Express light should be activated or not. In consequence, the express light is set to the correct value. \\
+		Figure \ref{MS_UC2} shows, how each cash desk performs on an external call the updateExpressLight routine. In this, the cash desk checks by itself if based on the recently proceeded sales the Express light should be activated or not. In consequence, the express light is set to the correct value. 
 		
-		\textbf{Behavioral View on UC 7 - Chane Price} \\
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 7 - Chane Price} \\
 		As described in figure \ref{MS_UC7}, in a first step, the database element which represents the store, managed by the store manager who wants to change the price is loaded. On this, the available products are filtered to find the one with the correct productId. 
-		Having the correct StockItem found, the sale price of that object can be updated. Afterwards, the StockItem object is updated in the database.\\
+		Having the correct StockItem found, the sale price of that object can be updated. Afterwards, the StockItem object is updated in the database.
 		
-		\textbf{Behavioral View on UC 8 - Product Exchange} \\
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 8 - Product Exchange} \\
 		The process on usecase 8 is shown in figure \ref{MS_UC8}. It starts at the end of an sale process. The microservice checks by itself if the stock amount of the sold items have reached their minimal amount. If not, nothing will happen. Otherwise, this information is passed to the appropriate EnterpriseManager. 
 		This EnterpriseManager collects in a first step all of its stores, which are also selling this specific product.
 		If the EnterpriseManage has found at least one store which also provides that products, it figures out, which one of the possible exchange sources is the best. By reducing the stock amount of that product in this optimal store and increasing it in the store, which started the request, the product exchange is executed.
@@ -256,10 +271,12 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 			\end{figure}
 		\FloatBarrier	
 		
-		\subsubsection{Reports}
-		This section describes the design of the \textit{Reports} microsevice, which provides the functionality of the usecases 5 and 6
+		\subsection{Reports}
+		This section describes the design of the \textit{Reports} microsevice, which provides the functionality of the usecases 5 and 6.
 		
-		\textbf{Behavioral View on UC 5 and Uc 6 - Show Stock Report and Show Delivery Report} \\
+		 \noindent
+		 \\
+		\textbf{Behavioural View on UC 5 and Uc 6 - Show Stock Report and Show Delivery Report} \\
 		In the following, the realization of usecase 5 and 6 are described. Usecase 5 is described in figure \ref{MS_UC5} and usecase 6 in figure \ref{MS_UC6}. 
 		In both cases, this microservice performs an rest call to receive informations from the microservice which contains the requested informations. This informations are returned on that request and are modified to represent the information in an proper format. That format is passed back to the calling frontend.
 			

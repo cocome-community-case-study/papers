@@ -10,7 +10,7 @@ This chapter describes implementation details for realizing the Docker environme
  		\caption{Deployment diagram CoCoME}
  		\label{Deploym_CoCoME}
  	\end{figure}
- 	
+ 	\noindent
  	The deployment assignment within the Docker environment is identical to the one specified in CoCoME deployment guide.
  	This means the maven generated archive files \textit{cloud-web-frontend},\textit{enterprise-logic-ear},\textit{store-logic-ear}\textit{cloud-registry-sevice} and \textit{service-adapter-ear} are deployed on the servers by using the following assignment:
  	\begin{figure}[H]
@@ -27,6 +27,7 @@ This chapter describes implementation details for realizing the Docker environme
  		\caption{Assignment of archive files to Servers}
  		\label{table_assignment}
  	\end{figure}
+ \noindent
     As mentioned earlier, there are two versions of this Docker project.\\
  	 The fast version can be extended by the Pick-Up shop\footnote{\url{https://github.com/cocome-community-case-study/cocome-cloud-jee-web-shop}}. This Pick-Up shop runs inside a separate Docker container which is shown in figure \ref{Deploym_Pickup}.  
  	\begin{figure}[h]
@@ -46,6 +47,7 @@ This chapter describes implementation details for realizing the Docker environme
  		\caption{Assignment archive files to Servers}
  		\label{table_assignment_pickup}
  	\end{figure}
+ \noindent
  	To control the start of both containers, precisely the CoCoME and the Pick-Up Shop, another specific file is needed: the Docker Compose file. It ensures that the CoCoME Container is active, before the Pick-Up Shop container starts. This is necessary as the Pickup Shop requires a running instance of CoCoME to register itself.\\
  	Whereas CoCOME does not require the Pick-Up Shop, the inversion is not corrext.
  	Both containers need to communicate with each other. By default, docker prohibits any outgoing and ingoing communication from and in a container. This is solved by opening specific ports through which the communication is possible. Which ports the containers can use is specified in the Docker Compose file as well.
