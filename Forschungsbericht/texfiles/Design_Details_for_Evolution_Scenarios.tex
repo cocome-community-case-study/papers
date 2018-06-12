@@ -211,7 +211,7 @@ By providing both, a fast deploying version and a current version, the user can 
 		Again UC 1 is divided in two parts (Fig. \ref{MS_UC1_1} and Fig. \ref{MS_UC1_2}).
 		The first part describes how a user can add products to the sale process. When the \textit{startSale} action is executed, the sale mode is activated and the \textit{CashDesk} is resetted from a previous, probably cancelled sale processes. To add products to the sale process, the user can either enter the barcode digit by digit using the keyboard or scan the barcode using a \textit{Scanner}. Further, the user can choose how many products s/he wants to purchase. This process is depicted in the inner loop. 
 		\\
-		Several checks are executed when successfully entering the barcode: If an item with the same barcode was already added to the sale, then the total amount for this item is increased by the second purchase amount. If not, the item is added to the sale, provided that an item with this barcode exists. In both cases, the availability of the item amount in the stock is checked and reduced. If one of the conditions is violated, the attempt of adding a product with the provided barcode an amount is quit. 
+		Several checks are executed when successfully entering the barcode: If an item with the same barcode was already added to the sale, then the total \textit{InventoryAmount}  is increased by the second purchase amount. If not, the item is added to the sale, provided that an item with this barcode exists. In both cases, the availability of the item amount in the stock is checked and reduced. If one of the conditions is violated, the attempt of adding a product with the provided barcode and amount is quit. 
 		Subsequently, the display is updated and the product information is added to the printer output.
 		\\
 		The second part of this use case, shown in Fig. \ref{MS_UC1_2}, handles the end of the sale process. By calling the \textit{finishSale} routine when pressing the button \textit{FinishSale}, the display is updated. Now, the user needs to choose between paying by card or cash and the \textit{CashDesk} is set to the corresponding paying mode. In case the user wants to pay by credit card, s/he needs to enter the credit card details. In the other case, the cash amount is entered. In both cases, the information is checked to accuracy.
@@ -220,84 +220,92 @@ By providing both, a fast deploying version and a current version, the user can 
 		\noindent
 		\\
 		\textbf{Behavioral View on UC 2 - Manage Express Checkout} \\
-		Figure \ref{MS_UC2} shows, how each cash desk performs on an external call the updateExpressLight routine. In this, the cash desk checks by itself if based on the recently proceeded sales the Express light should be activated or not. In consequence, the express light is set to the correct value. 
+		Changing the express mode is triggered on two occasions (\textit{externalCall}). First, when finishing a sale and if some conditions are fulfilled, the \textit{CashDesk} switches into express mode automatically. Second, the Cashier is able to switch back to normal mode. In both cases, the \textit{updateExpressLight} routine checks the current \textit{ExpressLight} state and performs an update in accordance with the kind of call.
+		
+       
 		
 		\noindent
 		\\
-		\textbf{Behavioural View on UC 7 - Chane Price} \\
-		As described in figure \ref{MS_UC7}, in a first step, the database element which represents the store, managed by the store manager who wants to change the price is loaded. On this, the available products are filtered to find the one with the correct productId. 
-		Having the correct StockItem found, the sale price of that object can be updated. Afterwards, the StockItem object is updated in the database.
+		\textbf{Behavioural View on UC 7 - Change Price} \\
+		The \textit{StoreManager} is able to change a price for \textit{StockItems} that are available in his/her store. As depicted in Fig. \ref{MS_UC7}, the \textit{StoreAdminManager} selects the right \textit{Store}, based on the \textit{StoreManager} that is logged in. To find the correct \textit{StockItem}, the available items are filtered by a given product id. When the correct \textit{StockItem} is found, the sale price can be simply updated by inserting the new price. Finally, the \textit{StockItem} in the database is updated.
 		
 		\noindent
 		\\
 		\textbf{Behavioural View on UC 8 - Product Exchange} \\
-		The process on usecase 8 is shown in figure \ref{MS_UC8}. It starts at the end of an sale process. The microservice checks by itself if the stock amount of the sold items have reached their minimal amount. If not, nothing will happen. Otherwise, this information is passed to the appropriate EnterpriseManager. 
-		This EnterpriseManager collects in a first step all of its stores, which are also selling this specific product.
-		If the EnterpriseManage has found at least one store which also provides that products, it figures out, which one of the possible exchange sources is the best. By reducing the stock amount of that product in this optimal store and increasing it in the store, which started the request, the product exchange is executed.
+		%TODO DU hattest hier drin, dass der EnterpriseManager die Info bekommt. das stimmt ja nicht. Das wird automatisch getrigered ohne das einer tatsächlich sagen muss: Exchange Products! Das macht das System
+		In case a Store is going to run out of a certain \textit{StockItem}, products from a different \textit{Store} within the same Enterprise can be exchanged. The process  is triggered at the end of a sale. It is shown in  Fig. \ref{MS_UC8}. The Microservice \textit{Store} checks if the stock amount of the sold items have passed the \textit{item.MinStock} amount. If not, nothing happens. Otherwise, the System the \textit{shiftItem} routine. First, all \textit{Stores} within the same \textit{Enterprise} of the \textit{Store} that is running out of stock are collected. For each \textit{Store}, the system checks if the desired \textit{StockItem} is available. The \textit{findOptimum} routine decides (using heuristics) whether the transportation is meaningful. After a successful query, the \textit{StockItem} is shipped from one Store to another, decreasing the amount at the first Store and increasing it at the second.
+
 		
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg}
-				\caption{Usecase 1 process sale, part 1}
+				\caption{Use case 1 process sale, part 1}
 				\label{MS_UC1_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg}
-				\caption{Usecase 1 process sale, part 2}
+				\caption{Use case 1 process sale, part 2}
 				\label{MS_UC1_2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.5\textwidth]{img/UC2_Manage_Express_Checkout.jpg}
-				\caption{Usecase 2 manage express mode}
+				\caption{Use case 2 manage express mode}
 				\label{MS_UC2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.9\textwidth]{img/UC7_Change_Price.jpg}
-				\caption{Usecase 7 change price}
+				\caption{Use case 7 change price}
 				\label{MS_UC7}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC8_Product_Exchange.jpg}
-				\caption{Usecase 8 product exchange}
+				\caption{Use case 8 product exchange}
 				\label{MS_UC8}
 			\end{figure}
 		\FloatBarrier	
 		
 		\subsection{Reports}
-		This section describes the design of the \textit{Reports} microsevice, which provides the functionality of the usecases 5 and 6.
+		This section describes the design of the \textit{Reports} Microservice, which provides the functionality of the use cases 5 and 6.
 		
 		 \noindent
 		 \\
-		\textbf{Behavioural View on UC 5 and Uc 6 - Show Stock Report and Show Delivery Report} \\
-		In the following, the realization of usecase 5 and 6 are described. Usecase 5 is described in figure \ref{MS_UC5} and usecase 6 in figure \ref{MS_UC6}. 
-		In both cases, this microservice performs an rest call to receive informations from the microservice which contains the requested informations. This informations are returned on that request and are modified to represent the information in an proper format. That format is passed back to the calling frontend.
+		\textbf{Behavioural View on UC 5 and UC 6 - Show Stock Report and Show Delivery Report} \\
+		The \textit{StoreManager} can request a full \textit{StockReport} that includes all available stock items in the store. This process is described as UC 5 in \ref{MS_UC5}. The \textit{StoreManager} enters the store identifier and the \textit{StoreCommunicator} of the \textit{Reports} Microservice requests the desired information via a rest call.
+		\\
+		%TODO Ähm... laut UC 6 im Buch sollte der EnterpriseManager die den enterprise identifiert eingeben. Nicht Order?!   Hast du das falsch implementiert?
+		Besides, the \textit{Reports} Microservice provides the opportunity to calculate the mean times a delivery from each supplier to a considered enterprise takes (UC 6). The process is described in  Fig. \ref{MS_UC6}. The \textit{EnterpriseManager} enters the order id and the \textit{OrderCommunicator} requests the information as a delivery report via rest call. The report is displayed to the \textit{EnterpriseManager}.
+		
+	
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC5_Show_Stock_Report.jpg}
-				\caption{Usecase 5 show stock report}
+				\caption{Use case 5 show stock report}
 				\label{MS_UC5}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC6_Show_Delivery_Reports.jpg}
-				\caption{Usecase 6 show delivery report}
+				\caption{Use case 6 show delivery report}
 				\label{MS_UC6}
 			\end{figure}
 			
 	\FloatBarrier
 	\subsection{Architectural overview}	\label{archiOverviewMicro}	
-	This section describes the architectural design of the microservices. As can be seen in figure \ref{MS_ARch}, there are the four microservices \textit{Orders}, \textit{Reports} \textit{stores} and \textit{Produkts}. The microservices provides its own user interface pages, which can be loaded dynamically. \\
-	Each of the microservices provides functionality which primary works on the database, located in that microservice. More detailed, these are for the Orders microservice functionality like creating new orders, delivering orders and showing those. The reports microservice does not possess an own database. Instead this one collects informations by rest request to the other microservices. The stores service provides functionality, needed by enterprisemanagers or storemanagers for example creating new stores or changing the sales prices for goods. Further, this one also contains the functionality for the sale process. In detail, the cash desk with its accessories is implemented here. In microservice products functionality for creating new supplier or products is provided, but also for ordering them.
+	This section describes the architectural design of the Microservices. CoCoME is divided into four different Microservices: \textit{Orders}, \textit{Reports} \textit{Stores} and \textit{Products} (Fig. \ref{MS_ARch}). Each Microservice provides its own graphical user interface that can be loaded dynamically. Further, each service provides its core functionality that sometimes requires a connection to other Microservices via REST. Each service apart  from \textit{Reports}, has its own Database. \\
+	The \textit{Store} service provides functionality for Store- and Enterprise Managers. They can create stores, change sale prices for goods or order products. For the last two functionalities, the \textit{Order} and \textit{Products} Service is needed. Further, the \textit{Store} service handles the sale process. 
+	
+
+
 	
 	
 	\begin{sidewaysfigure}[ht]
