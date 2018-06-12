@@ -6,16 +6,16 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Sequence Diagram of Searching an Item in the Mobile App Client}}{12}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Sequence Diagram of Processing a Sale}}{13}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Extended technology stack CoCoME}}{14}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Usecase 3 order products, part 1}}{15}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Usecase 3 order products, part 2}}{16}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Usecase 4 receive ordered products}}{16}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Use case 1 process sale, part 1}}{19}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Use case 1 process sale, part 2}}{20}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Use case 2 manage express mode}}{21}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Use case 7 change price}}{21}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Use case 8 product exchange}}{22}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Use case 5 show stock report}}{23}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Use case 6 show delivery report}}{24}{figure.3.15}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces UC 3: \textit {Order Products} (part 1)}}{15}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces UC 3: \textit {Order Products} (part 2)}}{16}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces UC 4: \textit {Receiver Ordered Products} }}{16}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces UC 1: \textit {Process Sale} (part 1)}}{19}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces UC 1: \textit {Process Sale} (part 2)}}{20}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces UC 2: \textit {Manage Express Mode}}}{21}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces UC 7: \textit {Change Price}}}{21}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces UC 8: \textit {Product Exchange}}}{22}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces UC 5: \textit {Show Stock Report}}}{23}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces UC 6: \textit {Show Delivery Report}}}{24}{figure.3.15}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Microservice architecture}}{25}{figure.3.16}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Assignment of archive files to Servers}}{26}{figure.4.2}

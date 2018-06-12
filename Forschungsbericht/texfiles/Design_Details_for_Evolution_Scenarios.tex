@@ -3,7 +3,7 @@ In this chapter we provide the detailed design documentation for each of the evo
 introduced in the prior section. Sec. \ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec. \ref{Docker} describes the adaptive changes of using a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of CoCoME \cite{HeinrichRostamiReussner2016_1000052688}. In contrast, Sec. \ref{MS} provides a detailed design documentation of a new architectural version of CoCoME. This perfective evolution scenario is realized based on the Microservice idea.
 
 \section{Adding a Mobile App Client} \label{App}
-Developing the Mobile App Client as an extension of CoCoME requires additional use cases. They are described in Sec. \ref{UseCasesMobileApp}. Sec. \ref{DesignMobileApp} describes extensions on design level. The content of this chapter mainly originates from \cite{schnabel}.
+Developing the Mobile App Client as an extension of CoCoME requires additional use cases. They are described in Sec. \ref{UseCasesMobileApp}. Further, sec. \ref{DesignMobileApp} describes extensions on design level. The content of this chapter mainly originates from \cite{schnabel}.
 \subsection{Use Cases of the Mobile App}\label{UseCasesMobileApp}
 		\begin{figure}[t]
 			\includegraphics[width=\textwidth]{img/appUseCase.png}
@@ -98,7 +98,7 @@ Developing the Mobile App Client as an extension of CoCoME requires additional u
 \newpage
 
 \subsection{Design of the Mobile App}\label{DesignMobileApp}
- Fig. \ref{ComponentApp} is the component of this evolution scenario. When adding the Mobile App client, the hybrid cloud-based variant of CoCoME did not have to be modified. Therefore, CoCoME is encapsulated in a single component. Simply the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store and WebService::Inventory::Enterprise} used by the App Client are emphasized. The entire component diagram for the hybrid cloud-based variant is available in the Technical Report \cite{HeinrichRostamiReussner2016_1000052688}. 
+ Fig. \ref{ComponentApp} sketches the component diagram of this evolution scenario. When adding the Mobile App client, the hybrid cloud-based variant of CoCoME did not have to be modified. Therefore, CoCoME is encapsulated in a single component. Simply the three web services \textit{WebService::Inventory::LoginManager, WebService::Inventory::Store and WebService::Inventory::Enterprise} used by the App Client are emphasized. The entire component diagram for the hybrid cloud-based variant is available in the Technical Report \cite{HeinrichRostamiReussner2016_1000052688}. 
  \\ Fig. \ref{ComponentApp} indicates that the AppShop requires an adapter to access the web services provided by CoCoME. This is because CoCoME uses SOAP/WS*-based web services which are not compatible with the technology used to implement the AppShop Client. A more detailed introduction about the technology used to implement the Mobile App Client can be found in \cite{schnabel}. 
   
  \begin{figure}[!h]
@@ -133,7 +133,7 @@ Fig. \ref{SequenceAppSale} demonstrates how the Mobile App Client processes sale
 
 \section{Using a Docker Environment} \label{Docker}
 
-As shown in Fig. \ref{techStack}, using a Docker Environment affects the technology stack by adding additional layers. More detailed, the given CoCoME Stack is moved into the Docker Deamon, which runs a Linux distribution.The original parts of the stack, like Glassfish and the Java Virtual Machine, are still a part of the stack.
+As shown in Fig. \ref{techStack}, using a Docker Environment affects the technology stack by adding additional layers. More detailed, the given CoCoME Stack is moved into the Docker Deamon, which runs a Linux distribution. The original parts of the stack, like Glassfish and the Java Virtual Machine, are still a part of the stack.
 	
 	\begin{figure}[!h]
 		\centering
@@ -147,7 +147,7 @@ Git has two purposes: On the one hand it is used to download the most recent ver
 \noindent
 During the development, it was decided to implement and provide two different versions. The first version always pulls the most recent CoCoME source code from GitHub, downloads the entire dependencies with Maven, compiles and builds the project and finally deploys CoCoME on the Glassfish servers. As a consequence, creating and starting a Docker Container takes about one hour.\\
 In contrast, the second version only pulls a prefabricated version of CoCoME from GitHub. 
-Therefore, pulling the source code up to building the project is skipped. Maven does not have to be included in the technology stack. Solely, deploying CoCoME on the Glassfish server is necessary.\\
+Therefore, pulling the source code up to building the project is skipped. Maven does not have to be included in the technology stack. Solely, deploying CoCoME on the Glassfish server is necessary.
 This reduces the deployment time to a few minutes but has a disadvantage: The prefabricated version is updated manually. Therefore, it is sometime not the most recent version.\\
 By providing both, a fast deploying version and a current version, the user can choose what's the best for its situation.
 	
@@ -157,7 +157,7 @@ By providing both, a fast deploying version and a current version, the user can 
 	
 \section{Microservices Technology} \label{MS}
 	In this section we provide a brief design documentation of the use cases that are defined in the hybrid cloud-based variant of CoCoME \cite{herold2008}(p.4-10).
-	The following subsections are divided into the Microservices and the corresponding Use Cases. Sec. \ref{archiOverviewMicro} describes the general architectural overview of the Microservice variant of CoCoME.
+	The following subsections are divided into the Microservices and the corresponding use cases. Sec.\ref{archiOverviewMicro} describes the general architectural overview of the Microservice variant of CoCoME.
 	
 
 %TODO  Hier weiter
@@ -174,21 +174,21 @@ By providing both, a fast deploying version and a current version, the user can 
 		\noindent
 		\\
 		\textbf{Behavioural View on UC 4 - Receive Ordered Products} \\
-		//%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch
-		The figure \ref{MS_UC4} shows, that first the ProductOrder element is refreshed and the delivery date is set to the passed date.
+		%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch  => Den Text und UC diagramm überarbeiten
+		Fig. \ref{MS_UC4} shows, that first the ProductOrder element is refreshed and the delivery date is set to the passed date.
 		After this, it performs for each OrderEntry a rest call to the store microservice in which the store itself is represented. With that rest call, the StockItem, which is representing the corresponding product in the store ,is increased the amount of available products.
 		
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.7\textwidth]{img/UC3_Order_Products_1_OrderEntryCreate.jpg}
-				\caption{Usecase 3 order products, part 1}
+				\caption{UC 3: \textit{Order Products} (part 1)}
 				\label{MS_UC3_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC3_Order_Products_2_ProductOrderCreate.jpg}
-				\caption{Usecase 3 order products, part 2}
+				\caption{UC 3: \textit{Order Products} (part 2)}
 				\label{MS_UC3_2}
 			\end{figure}
 		
@@ -196,7 +196,7 @@ By providing both, a fast deploying version and a current version, the user can 
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC4_Receive_Ordered_Products.jpg}
-				\caption{Usecase 4 receive ordered products}
+				\caption{UC 4: \textit{Receiver Ordered Products} }
 				\label{MS_UC4}
 			\end{figure}
 			
@@ -208,13 +208,13 @@ By providing both, a fast deploying version and a current version, the user can 
 		\noindent
 		\\
 		\textbf{Behavioural View on UC 1 - Process Sale} \\
-		Again UC 1 is divided in two parts (Fig. \ref{MS_UC1_1} and Fig. \ref{MS_UC1_2}).
+		Again, UC 1 is divided in two parts (Fig. \ref{MS_UC1_1} and Fig. \ref{MS_UC1_2}).
 		The first part describes how a user can add products to the sale process. When the \textit{startSale} action is executed, the sale mode is activated and the \textit{CashDesk} is resetted from a previous, probably cancelled sale processes. To add products to the sale process, the user can either enter the barcode digit by digit using the keyboard or scan the barcode using a \textit{Scanner}. Further, the user can choose how many products s/he wants to purchase. This process is depicted in the inner loop. 
 		\\
-		Several checks are executed when successfully entering the barcode: If an item with the same barcode was already added to the sale, then the total \textit{InventoryAmount}  is increased by the second purchase amount. If not, the item is added to the sale, provided that an item with this barcode exists. In both cases, the availability of the item amount in the stock is checked and reduced. If one of the conditions is violated, the attempt of adding a product with the provided barcode and amount is quit. 
+		Several checks are executed when successfully entering the barcode: If an item with the same barcode was already added to the sale, then the actual total \textit{inventoryAmount}  is increased by the second purchase amount. If not, the item is added to the sale, provided that an item with this barcode exists. In both cases, the availability of the item amount in the stock is checked and reduced. If one of the conditions is violated, the attempt of adding a product with the provided barcode and amount is quit. 
 		Subsequently, the display is updated and the product information is added to the printer output.
 		\\
-		The second part of this use case, shown in Fig. \ref{MS_UC1_2}, handles the end of the sale process. By calling the \textit{finishSale} routine when pressing the button \textit{FinishSale}, the display is updated. Now, the user needs to choose between paying by card or cash and the \textit{CashDesk} is set to the corresponding paying mode. In case the user wants to pay by credit card, s/he needs to enter the credit card details. In the other case, the cash amount is entered. In both cases, the information is checked to accuracy.
+		The second part of this use case, shown in Fig.\ref{MS_UC1_2}, handles the end of the sale process. By calling the \textit{finishSale} routine (when pressing the button \textit{FinishSale}), the display is updated. Now, the user needs to choose between paying by card or cash and the \textit{CashDesk} is set to the corresponding paying mode. In case the user wants to pay by credit card, s/he needs to enter the credit card details. In the other case, the cash amount is entered. In both cases, the information is checked to accuracy.
 		After successfully ending the payment, the printer and display are updated and the \textit{CashDesk} ends the sale process.
 
 		\noindent
@@ -227,58 +227,58 @@ By providing both, a fast deploying version and a current version, the user can 
 		\noindent
 		\\
 		\textbf{Behavioural View on UC 7 - Change Price} \\
-		The \textit{StoreManager} is able to change a price for \textit{StockItems} that are available in his/her store. As depicted in Fig. \ref{MS_UC7}, the \textit{StoreAdminManager} selects the right \textit{Store}, based on the \textit{StoreManager} that is logged in. To find the correct \textit{StockItem}, the available items are filtered by a given product id. When the correct \textit{StockItem} is found, the sale price can be simply updated by inserting the new price. Finally, the \textit{StockItem} in the database is updated.
+		The \textit{StoreManager} is able to change a price for \textit{StockItems} that are available in his/her store. As depicted in Fig. \ref{MS_UC7}, the \textit{StoreAdminManager} selects the right \textit{Store}, based on the \textit{StoreManager} that is logged in. To find the correct \textit{StockItem}, the available items are filtered by a given product id. When the correct \textit{StockItem} is found, the sale price can be simply updated by entering the new price. Finally, the \textit{StockItem} in the database is updated.
 		
 		\noindent
 		\\
 		\textbf{Behavioural View on UC 8 - Product Exchange} \\
 		%TODO DU hattest hier drin, dass der EnterpriseManager die Info bekommt. das stimmt ja nicht. Das wird automatisch getrigered ohne das einer tatsächlich sagen muss: Exchange Products! Das macht das System
-		In case a Store is going to run out of a certain \textit{StockItem}, products from a different \textit{Store} within the same Enterprise can be exchanged. The process  is triggered at the end of a sale. It is shown in  Fig. \ref{MS_UC8}. The Microservice \textit{Store} checks if the stock amount of the sold items have passed the \textit{item.MinStock} amount. If not, nothing happens. Otherwise, the System the \textit{shiftItem} routine. First, all \textit{Stores} within the same \textit{Enterprise} of the \textit{Store} that is running out of stock are collected. For each \textit{Store}, the system checks if the desired \textit{StockItem} is available. The \textit{findOptimum} routine decides (using heuristics) whether the transportation is meaningful. After a successful query, the \textit{StockItem} is shipped from one Store to another, decreasing the amount at the first Store and increasing it at the second.
+		In case a Store is going to run out of a certain \textit{StockItem}, products from a different \textit{Store} within the same Enterprise can be exchanged. The process  is triggered at the end of a sale. It is shown in  Fig. \ref{MS_UC8}. The Microservice \textit{Store} checks if the stock amount of the sold items have passed the minimal stock amount. If not, nothing happens. Otherwise, the System calls the \textit{shiftItem} routine. First, all \textit{Stores} within the same \textit{Enterprise} of the \textit{Store} that is running out of stock are collected. For each \textit{Store}, the system checks if the desired \textit{StockItem} is available. The \textit{findOptimum} routine decides (using heuristics) whether the transportation is meaningful. After a successful query, the \textit{StockItem} is shipped from one Store to another, decreasing the amount at the first \textit{Store} and increasing it at the second.
 
 		
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg}
-				\caption{Use case 1 process sale, part 1}
+				\caption{UC 1: \textit{Process Sale} (part 1)}
 				\label{MS_UC1_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg}
-				\caption{Use case 1 process sale, part 2}
+				\caption{UC 1: \textit{Process Sale} (part 2)}
 				\label{MS_UC1_2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.5\textwidth]{img/UC2_Manage_Express_Checkout.jpg}
-				\caption{Use case 2 manage express mode}
+				\caption{UC 2: \textit{Manage Express Mode}}
 				\label{MS_UC2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.9\textwidth]{img/UC7_Change_Price.jpg}
-				\caption{Use case 7 change price}
+				\caption{UC 7: \textit{Change Price}}
 				\label{MS_UC7}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC8_Product_Exchange.jpg}
-				\caption{Use case 8 product exchange}
+				\caption{UC 8: \textit{Product Exchange}}
 				\label{MS_UC8}
 			\end{figure}
 		\FloatBarrier	
 		
 		\subsection{Reports}
-		This section describes the design of the \textit{Reports} Microservice, which provides the functionality of the use cases 5 and 6.
+		This section describes the design of the \textit{Reports} Microservice, which provides the functionality of the UC 5 and 6.
 		
 		 \noindent
 		 \\
 		\textbf{Behavioural View on UC 5 and UC 6 - Show Stock Report and Show Delivery Report} \\
-		The \textit{StoreManager} can request a full \textit{StockReport} that includes all available stock items in the store. This process is described as UC 5 in \ref{MS_UC5}. The \textit{StoreManager} enters the store identifier and the \textit{StoreCommunicator} of the \textit{Reports} Microservice requests the desired information via a rest call.
+		The \textit{StoreManager} can request a full \textit{StockReport} that includes all available stock items in the store. This process is described as UC 5 in \ref{MS_UC5}. The \textit{StoreManager} enters the store identifier and the \textit{StoreCommunicator} within the \textit{Reports} Microservice requests the desired information via a rest call.
 		\\
 		%TODO Ähm... laut UC 6 im Buch sollte der EnterpriseManager die den enterprise identifiert eingeben. Nicht Order?!   Hast du das falsch implementiert?
 		Besides, the \textit{Reports} Microservice provides the opportunity to calculate the mean times a delivery from each supplier to a considered enterprise takes (UC 6). The process is described in  Fig. \ref{MS_UC6}. The \textit{EnterpriseManager} enters the order id and the \textit{OrderCommunicator} requests the information as a delivery report via rest call. The report is displayed to the \textit{EnterpriseManager}.
@@ -288,14 +288,14 @@ By providing both, a fast deploying version and a current version, the user can 
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC5_Show_Stock_Report.jpg}
-				\caption{Use case 5 show stock report}
+				\caption{UC 5: \textit{Show Stock Report}}
 				\label{MS_UC5}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC6_Show_Delivery_Reports.jpg}
-				\caption{Use case 6 show delivery report}
+				\caption{UC 6: \textit{Show Delivery Report}}
 				\label{MS_UC6}
 			\end{figure}
 			

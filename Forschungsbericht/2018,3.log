@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  12 JUN 2018 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.2)  12 JUN 2018 12:46
 entering extended mode
 **./2018,3.tex
 (2018,3.tex
@@ -2359,10 +2359,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--83
  []
 
 [9] [10]
-Overfull \hbox (2.26305pt too wide) in paragraph at lines 101--103
-\T1/LinuxLibertineT-TLF/m/n/12 (-20) lated in a sin-gle com-po-nent. Sim-ply th
-e three web ser-vices \T1/LinuxLibertineT-TLF/m/it/12 Web-Ser-vice::Inventory::
-LoginManager,
+Overfull \hbox (6.04442pt too wide) in paragraph at lines 101--103
+\T1/LinuxLibertineT-TLF/m/it/12 vice::Inventory::LoginManager, Web-Ser-vice::In
+ventory::Store and Web-Ser-vice::Inventory::Enterprise
  []
 
 <img/appComponent.png, id=253, 592.614pt x 370.0224pt>
@@ -2727,10 +2726,10 @@ l.71 \FloatBarrier
 <img/projectStructure_Micro.png, id=385, 524.96124pt x 90.3375pt>
 File: img/projectStructure_Micro.png Graphic file (type png)
 <use img/projectStructure_Micro.png>
-Package pdftex.def Info: img/projectStructure_Micro.png  used on input line 81.
- on input line 81.
+Package pdftex.def Info: img/projectStructure_Micro.png  used on input line 85.
+ on input line 85.
 Package pdftex.def Info: Requested size: 364.19667pt x 62.67477pt on input line
- 81.
+ 85.
 ) (texfiles/Conclusion.tex
 [30
 
@@ -2774,7 +2773,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
 Here is how much of TeX's memory you used:
  31300 strings out of 493312
  627659 string characters out of 3128523
- 793979 words of memory out of 3000000
+ 793967 words of memory out of 3000000
  33899 multiletter control sequences out of 15000+200000
  148909 words of font info for 179 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2792,7 +2791,7 @@ eX 2.9/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/Nikolaus/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold
 .pfb><C:/Users/Nikolaus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/bera/fvmr
 8a.pfb>
-Output written on 2018,3.pdf (32 pages, 2919099 bytes).
+Output written on 2018,3.pdf (32 pages, 2919325 bytes).
 PDF statistics:
  445 PDF objects out of 1000 (max. 8388607)
  85 named destinations out of 1000 (max. 500000)

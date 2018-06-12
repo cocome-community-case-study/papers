@@ -3,7 +3,7 @@ This chapter describes implementation details for realizing the Docker environme
 
 
 \section{Using a Docker Environment}\label{DockerImplementation}
- 	As shown in Fig. \ref*{Deploym_CoCoME}, the docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER}. By default, Glassfish provides a Derby DB that is connected to the Service Adapter using Java Database Conectivity (JDBS) interface.
+ 	As shown in Fig. \ref*{Deploym_CoCoME}, the Docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER}. By default, Glassfish provides a Derby DB that is connected to the Service Adapter using Java Database Conectivity (JDBS) interface.
  	\begin{figure}[h]
  		\centering
  		\includegraphics[width = 0.8\textwidth]{img/docker_Container_Deployment.png}
@@ -49,7 +49,7 @@ This chapter describes implementation details for realizing the Docker environme
  	\end{figure}
  \noindent
  	To control the start of both containers, precisely the CoCoME and the Pick-Up Shop, another specific file is needed: the Docker Compose file. It ensures that the CoCoME Container is active, before the Pick-Up Shop container starts. This is necessary as the Pickup Shop requires a running instance of CoCoME to register itself.\\
- 	Whereas CoCOME does not require the Pick-Up Shop, the inversion is not corrext.
+ 	Whereas CoCoME does not require the Pick-Up Shop, the inversion is not corrext.
  	Both containers need to communicate with each other. By default, docker prohibits any outgoing and ingoing communication from and in a container. This is solved by opening specific ports through which the communication is possible. Which ports the containers can use is specified in the Docker Compose file as well.
  	
  	
@@ -59,7 +59,7 @@ Adding a Mobile App Client did not require a modification within the hybrid clou
 The \textit{Navigator} is the primary class that manages the pages. The pages consist of two components: The \textit{Page} itself and its \textit{PageState}. The \textit{PageState} is used to store and transfer the current status of a page. There are currently six different pages available: \textit{IndexPage}, \textit{SearchPage}, \textit{ItemPage}, \textit{CheckoutPage}, \textit{CartPage} and \textit{LoginPage}. For the sake of clarity, they are subsumed under the generic terms \textit{ConcretePage} and \textit{ConcretePageState}. 
 \\
 Pages use components. Such components are i.e. the \textit{Navbar} or the \textit{Searchbar}. These components are abstract descriptions of UI elements that are connected to the actual \textit{HTML-elements} via Knockout.js. By using Knockout.js, changing values of a component results in an immediate change of the UI. 
-Besides, the App Client retrieves information of the CoCoME system.  As mentioned in \ref{DesignMobileApp}, the Client is not able to access the CoCoME system directly. Therefore, the pages use \textit{Services} provided by a \textit{ServiceHolder} to call the \textit{AppController'} Rest-API. The \textit{AppController} is written in Java using the SpringBoot framework and converts the Rest-requests of the App Client to SOAP-Requests in order to match the CoCoME-API. 
+Besides, the App Client retrieves information of the CoCoME system.  As mentioned in \ref{DesignMobileApp}, the Client is not able to access the CoCoME system directly. Therefore, the pages use \textit{Services} provided by a \textit{ServiceHolder} to call the \textit{AppController's} Rest-API. The \textit{AppController} is written in Java using the SpringBoot framework and converts the Rest-requests of the App Client to SOAP-Requests in order to match the CoCoME-API. 
   
   
    \begin{sidewaysfigure}[ht]
@@ -72,14 +72,18 @@ Besides, the App Client retrieves information of the CoCoME system.  As mentione
  
  
  \section{Using Microservice Technology} \label{MicroserviceImplementation}
- The CoCoME microservice evolution scenario transfers the functionality of original CoCoME Plain Java variant into microservices by implementing an microservice architecture and using rest communication. The implementation was done using Eclipse for Java and Glassfish to deploy the applications. Further, the Java Persistence API is used for persisting and mapping Java classes to structures of relational databases. JAX-RS offers functionality for recourse oriented WEB-APIs based on REST-Architectural style. JAXB defines an interface for serialize and deserialize of JAVA-classes to XML- or JSON-files. 
+ The Microservice evolution scenario of CoCoME transfers the functionality of the hybrid cloud-based variant of CoCoME into a Microservice architecture that is using REST communication between the different services. The implementation is done using Java EE as programming language and Glassfish as deployment server. The Java Persistence API is used to store elements in a relational DB. The Java API for RESTful Web Services (JAX-RS)  is used to standardize the REST-communication between the different Microservices. To serialize and deserialize Java-classes to XML- or JSON-files, the Java Architecture for XML Binding (JAXB) is used. 
  \\
- As can be seen in figure \ref{projectStructure} each service project contains three sub-projects, namely \textit{name}-service-ejb, \textit{name}-service-rest and \textit{name}-service-ear. The first one contains the logical implementation of these projects as well as the functionality for persisting the  second provides the rest implementation. Also it has via injections access to the database. The last one is used for packaging the projects to ear files. 
+ Fig.\ref{projectStructure} demonstrates the project structure of the \textit{Store} Microservice. The other services have the same structure. Therefore, they are not shown explicitly.  Each service project contains three sub-projects, namely \textit{name}-service-ejb, \textit{name}-service-rest and \textit{name}-service-ear. The first sub-project contains the core logic as well as the persistence functionality. The second one provides the REST-ful webservice. The last one is used for packaging the projects to ear files. 
+ 
+ 
+ 
+
  
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width = 0.8\textwidth] {img/projectStructure_Micro.png}
-	 	\caption{Project structure microservices}[The structure shown in in this figure is implemeted in the same way for the other microservices.]
+	 	\caption{Project structure Microservices}
 	 	\label{projectStructure}
 	 	
  	\end{figure}
