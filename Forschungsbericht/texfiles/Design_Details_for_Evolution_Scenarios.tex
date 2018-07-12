@@ -1,4 +1,5 @@
 \chapter{Design Details for Evolution Scenarios}
+\label{c:design}
 In this chapter we provide the detailed design documentation for each of the evolution scenarios
 introduced in the prior section. Sec. \ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec. \ref{Docker} describes the adaptive changes of using a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of CoCoME \cite{HeinrichRostamiReussner2016_1000052688}. In contrast, Sec. \ref{MS} provides a detailed design documentation of a new architectural version of CoCoME. This perfective evolution scenario is realized based on the Microservice idea.
 
@@ -6,7 +7,7 @@ introduced in the prior section. Sec. \ref{App} sketches the design decision for
 Developing the Mobile App Client as an extension of CoCoME requires additional use cases. They are described in Sec. \ref{UseCasesMobileApp}. Further, sec. \ref{DesignMobileApp} describes extensions on design level. The content of this chapter mainly originates from \cite{schnabel}.
 \subsection{Use Cases of the Mobile App}\label{UseCasesMobileApp}
 		\begin{figure}[t]
-			\includegraphics[width=\textwidth]{img/appUseCase.png}
+			\includegraphics[width=\textwidth]{img/appUseCase.jpg}
 			\caption{Use Case Diagram CoCoME Mobile App}
 		\end{figure}
 
@@ -171,12 +172,7 @@ By providing both, a fast deploying version and a current version, the user can 
 		\textbf{Behavioural View on UC 3 - Order Products} \\
 		For better understanding, UC 3 is divided in two steps. The first part is described in Fig. \ref{MS_UC3_1}: A user chooses the product items to order and the corresponding amount. Each \textit{ProductOrder} is stored in the \textit{ProductOrderRepository} as a \textit{OrderEntry}. In the second part (Fig. \ref{MS_UC3_2}), the  \textit{OrderEntries} are wrapped in a single \textit{ProductOrder} element that additionally contains information about the store and the date of the order. When the user presses the button \textit{Order}, the \textit{OrderManagement} iterates over the collection of \textit{OrderEntries} and sets a reference to the actual \textit{ProductOrder}.
 	
-		\noindent
-		\\
-		\textbf{Behavioural View on UC 4 - Receive Ordered Products} \\
-		%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch  => Den Text und UC diagramm überarbeiten
-		Fig. \ref{MS_UC4} shows, that first the ProductOrder element is refreshed and the delivery date is set to the passed date.
-		After this, it performs for each OrderEntry a rest call to the store microservice in which the store itself is represented. With that rest call, the StockItem, which is representing the corresponding product in the store ,is increased the amount of available products.
+
 		
 			\begin{figure}[!h]
 				\centering
@@ -191,7 +187,12 @@ By providing both, a fast deploying version and a current version, the user can 
 				\caption{UC 3: \textit{Order Products} (part 2)}
 				\label{MS_UC3_2}
 			\end{figure}
-		
+		\noindent
+		\\
+		\textbf{Behavioural View on UC 4 - Receive Ordered Products} \\
+		%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch  => Den Text und UC diagramm überarbeiten
+		Fig. \ref{MS_UC4} shows, that first the ProductOrder element, which handles the order with the passed id, is refreshed and the delivery date is set to the passed date.
+		After this, it performs for each OrderEntry a rest call to the store microservice. With that rest call the StockItem, which is representing the corresponding product in the store, is increased the amount of delivered products.		
 			
 			\begin{figure}[!h]
 				\centering

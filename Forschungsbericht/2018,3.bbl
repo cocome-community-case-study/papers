@@ -1,5 +1,19 @@
 \begin{thebibliography}{1}
 
+\bibitem{Goltz2015}
+U.~Goltz, R.~H. Reussner, M.~Goedicke, W.~Hasselbring, L.~M{\"a}rtin, and
+  B.~Vogel-Heuser.
+\newblock Design for future: managed software evolution.
+\newblock {\em Computer Science - Research and Development}, 30(3):321--331,
+  Aug 2015.
+
+\bibitem{heinrich2015platform}
+R.~Heinrich, S.~G{\"a}rtner, T.-M. Hesse, T.~Ruhroth, R.~Reussner,
+  K.~Schneider, B.~Paech, and J.~J{\"u}rjens.
+\newblock A platform for empirical research on information system evolution.
+\newblock In {\em 27th International Conference on Software Engineering and
+  Knowledge Engineering}, pages 415--420, 2015.
+
 \bibitem{HeinrichRostamiReussner2016_1000052688}
 R.~Heinrich, K.~Rostami, and R.~Reussner.
 \newblock The cocome platform for collaborative empirical research on
@@ -25,5 +39,11 @@ J.~Schnabel.
 \newblock Mobile application client for a cloud based software system.
 \newblock
   \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-app-shop/blob/master/doc/SQEE1617_MobileApp_Schnabel.pdf}.
+
+\bibitem{sommer}
+N.~Sommer.
+\newblock Erweiterung und wartung einer cloud-basierten jee-architektur.
+\newblock
+  \url{https://github.com/cocome-community-case-study/cocome-cloud-jee-microservices-rest/blob/master/doc/report.pdf}.
 
 \end{thebibliography}
