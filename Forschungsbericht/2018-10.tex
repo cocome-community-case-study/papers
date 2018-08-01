@@ -1,6 +1,6 @@
 
 %% F?r die endg?ltige Version von ``draft'' auf ``final'' umstellen
-\documentclass[12pt,headsepline,twoside,final]{scrreprt}
+\documentclass[12pt,headsepline,twoside,draft]{scrreprt}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -12,7 +12,8 @@
 \usepackage{templates/tikzuml}
 \usepackage{import}
 \usepackage{xspace}
-
+\usepackage{pdfsync}
+\usepackage{changes}
 \usepackage{wrapfig}
 \usepackage{subfigure}
 \usepackage{rotating}
@@ -22,9 +23,12 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage[section]{placeins}
+\usepackage{todonotes}
+\newcommand{\todosk}[1]{\todo[inline, color=teal!31]{#1}}
 \newcommand{\CoCoME}{\mbox{CoCoME}\xspace}
 \newcommand{\CoCoMEP}{\mbox{CoCoMEP}\xspace}
 \newcommand{\textcode}[1]{\textsf{\footnotesize #1}}
+\usepackage{makecell}
 
 
 %Draft Watermark
@@ -46,7 +50,7 @@
 	\title{The CoCoME Platform for \linebreak Collaborative Empirical Research on Information System Evolution} 
 	\subtitle{Evolution scenario in the second founding period of SPP 1593}
 	
-	\author{Robert Heinrich, Ralf Reussner}
+	\author{Robert Heinrich, Sandro Koch, Ralf Reussner}
 	%\institute{Institute for Program Structures and Data Organization}
 	
 	\date{\today}
