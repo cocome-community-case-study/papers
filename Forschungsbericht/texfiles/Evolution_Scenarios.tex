@@ -1,39 +1,87 @@
+%!TEX root = ../2018-10.tex
+
 \chapter{Evolution Scenarios}
 \label{c:evolution scenarios}
 
 This chapter introduces the evolution scenarios of the second funding period of the DFG Priority Programme
 Design For Future -- Managed Software Evolution.
 The evolution scenarios cover the categories adaptive and perfective evolution. Corrective evolution is not considered in the scenarios as this merely refers to fixing design or implementation issues.
+%\todosk{beschreiben was adaptive, perfective und corrective ist}
 
 \section{Evolution Scenarios of the Hybrid Cloud-based Variant}
-This section introduces the two evolution scenarios of the hybrid cloud-based variant of
-CoCoME.
-\subsection{Setting up a Docker environment}
-~\\The CoCoME company must reduce IT administration costs but frequent updates to the enterprise and store software are necessary to continuously improve the entire system. As a consequence, IT staff need to update the system components as soon as a new software version is released. An Operations Team member has to get access to the actual server in order to undeploy the old version and replace it with the new one. This is time consuming and expensive as the updates have to be done manually.\\
-Therefore, a Docker version is elaborated to simplify the administration process. As soon as a new software version of CoCoME is ready for delivery, the Development Team wrap it into a Docker Image. This Image can be automatically deployed to the destination server according to the principle of Continuous Deployment (CD) \cite{olsson2012climbing}. 
+This section introduces \deleted{the }two evolution scenarios \added{for \CoCoME}.
+\added{In the first scenario a container virtualization is introduced.}
+\added{The second scenario presents a mobile application which can be used with \CoCoME.}
+\added{The goal is to enable} \deleted{of the}\added{a} hybrid cloud-based variation of \CoCoME.
+
+%\todosk{Wer, was, warum}
+
+\subsection{\added{New Scenario 1 -- }Container Virtualization\deleted{Setting up a Docker environment}}
+%\todosk{ist das schon ein szenario?}
+\added{This scenario aims to facilitate the deployment and operation of the \CoCoME system.
+Thus, container-based virtualization with Docker is introduced. 
+Docker eases the integration of \CoCoME into build and deployment pipelines. 
+The functionality of \CoCoME remains the same although the technology stack must be extended as visualized in Fig.~\ref{techStack}.}
+
+\added{The \CoCoME company identified the IT administration as a significant cost factor.}
+\deleted{The \CoCoME company \deleted{must}\added{wants to} reduce IT administration costs.}
+\added{Nevertheless, it is required to continuously improve the entire system in order to stay competitive.
+Thus, frequent updates to the enterprise and store software are necessary.}
+\deleted{Nevertheless, frequent updates to the enterprise and store software are necessary to continuously improve the entire system.}
+As a consequence of the frequent update process, the IT staff \deleted{needs to}must update the system components.
+Updating is \deleted{necessary}\added{required} as soon as a new software version is released.
+
+The \added{old} update process is as follows:
+\added{After the new version of \CoCoME is built a}\deleted{A}n operations team member has to get access to the actual server.
+%\todosk{muss das bauen selbst noch erwähnt werden?}
+The old version \deleted{has to}\added{must} be undeployed and replaced with the new version. 
+The whole update process is time consuming and expensive as the updates have to be done manually.
+%\todosk{das alles ist jetzt nicht unbedingt abhängig von docker sondern vom build prozess. das kann also auch alles durch cd (aka jenkins) gelöst werden, ohne auch nur einen docker container zu brauchen...}
+
+Therefore, \deleted{a }Docker\deleted{ version} is elaborated to simplify the administration process. 
+As soon as a new \added{release}\deleted{software} version of CoCoME is ready for delivery, the \added{d}\deleted{D}evelopment \added{t}\deleted{T}eam \added{starts the rebuilding process of the \CoCoME Docker Image.}\deleted{wraps it into a Docker Image}.
+\CoCoME is build in the Docker Container.
+% \todosk{das ist doch genau der gleiche prozess: einloggen und hochladen. ich seh jetzt hier nicht den großen vorteil nur weil man das image nicht löschen muss?}. 
+This Docker Image can be automatically deployed to the destination server according to the principle of Continuous Deployment (CD)~\cite{olsson2012climbing}. 
+%\todosk{der vorteil ist doch, dass der cocome in servies aufteilt werden kann. und 1. die services unabhängig voneinander entwickelt werden können 2. }
 
 
 
 
-\subsection{Adding a Mobile App}
-~\\After successfully adding a Pick-up Shop, the CoCoME company stays competitive with other online shop vendors (such as Amazon). In times of smartphones, customer do not only want to buy exclusively goods from their home computers. Purchasing goods 'on the way' comes more and more into fashion. This raises the idea to create a second sales channel next to the existing Pick-up Shop in the CoCoME system. As a consequence, more customers can be attracted to gain a larger share of the market. 
-\\
-The customer can order and pay by using the app. The delivery process is similar to the Pick-up Shop: The goods are delivered to a pick-up place (i.e. a store) of her/his choice, for example in the neighbourhood or the way to work.
-By introducing the Mobile App as a multi OS application, the CoCoME system has to face various quality issues such as privacy, security and reliability. Also the performance of the whole application can be affected if many customers order via the app.
+\subsection{\added{New Scenario 2 -- }Adding a Mobile App}
+After successfully adding a Pick-up Shop
+%\todosk{heißt das wirklich so?}
+, the CoCoME company stays competitive with other online shop vendors (such as Amazon). 
+However, in the smartphone era customers do not only want to buy goods exclusively from their homes or local stores. % computers\todosk{dafür gibts ja die real life shops?}. 
+Purchasing goods anywhere and anytime has become a demanding requirement in order to stay competitive on the market. %'on the way' comes more and more into fashion. 
+This raises the idea to create a \deleted{second}\added{third} sales channel next to the existing Pick-up Shop \added{and local stores} in the CoCoME system. 
+As a consequence, more customers can be \added{acquired}\deleted{attracted}\added{ to increase the companies market share.} \deleted{gain a larger share of the market. }
+
+The customer can order and pay by using the \added{CoCoME Mobile App}\deleted{app}. 
+The delivery process is similar to the Pick-up Shop: The goods are delivered to a pick-up place (\deleted{i.e.}e.g., a store) of the customers\deleted{his/hers} choice.\deleted{for example in the neighborhood or the way to work.}
+By introducing the Mobile App as a multi OS application, the CoCoME system has to face various quality issues such as privacy, security and reliability. 
+Also the performance of the whole application can be affected if many customers order via the app.
 
 
 
 
 %TD\newpage
 
-\section{Evolution Scenarios of the Microservice-based Variant}
-This section introduces the evolution scenario of the Microservice-based variant of CoCoME.
-\subsection{Defining different Microservices}
-After a year of economical stagnation, the CoCoME company decides to restructure its infrastructure. Global players like Amazon or Netflix demonstrated that using a Microservice Architecture makes them more flexible regarding new functionality. When adding the Pick-up Shop, the CoCoME company realized that they have to break open the existing system. It was necessary to modify the \textit{WebService::Inventory} and the \textit{TradingSystem::Inventory} component \cite{HeinrichRostamiReussner2016_1000052688}. Furthermore, adding a \textit{MobileAppClient} demonstrated that the SOAP/WS*-based web services provided by CoCoME are not compatible with REST-based App development.
-\\
-Inspired by the flexibility and reusability of Microservices, the CoCoME company decided to invest money into a restructuring process. The current system is divided into a collection of loosely coupled services. Each of them covers a specific part of the former CoCoME system. The aim is to preserve the functionality of the current system and solely change its architecture.
-\\
- This enables the company to develop new markets much easier and therefore secures the future competitiveness. For example, the CoCoME company wants to extend their product range by offering movie streaming. This requires a vastly different system. Nevertheless, Customer Management like login and means of payment are identical to the former CoCoME system. Those components already exists as a Microservice and therefore can be taken over. The management is certain that this will soon result in economical growth.
+\section{Evolution Scenarios of the Microservice Architecture}
+This section introduces the evolution scenario of the microservice-based variation of CoCoME.
+\subsection{\added{New Scenario 3 -- }Defining different microservices}
+After a year of economical stagnation, the CoCoME company decides to restructure its infrastructure. Global players like Amazon or Netflix demonstrated that using a microservice Architecture makes them more flexible regarding new functionality. When adding the Pick-up Shop, the CoCoME company realized that they have to break open the existing system. It was necessary to modify the \textit{WebService::Inventory} and the \textit{TradingSystem::Inventory} component~\cite{HeinrichRostamiReussner2016_1000052688}. Furthermore, adding a \textit{MobileAppClient} demonstrated that the SOAP/WS*-based web services provided by CoCoME are not compatible with REST-based App development.
+
+Inspired by the flexibility and reusability of microservices, the CoCoME company decided to invest money into a restructuring process. The current system is divided into a collection of loosely coupled services. Each of them covers a specific part of the former CoCoME system. The aim is to preserve the functionality of the current system and solely change its architecture.
+
+This enables the company to tap into\deleted{develop} new markets with fewer difficulties. \deleted{much easier.}
+Therefore, the future competitiveness is secured. 
+For example, the CoCoME company wants to extend their \deleted{product}\added{service} range by offering movie streaming.%\todosk{abwegig, aber ok...} 
+This requires a vastly different system. 
+Nevertheless, customer management like login and means of payment are identical to the former \CoCoME system. 
+Those components already exists as a microservice and therefore can be reused\deleted{taken over}. 
+\deleted{The management is certain that this will soon result in economical growth.}
+%\todosk{warum ist dieser teil wie eine kleine geschichte aufgebaut, die teile davor aber nicht?}
 
 
 
