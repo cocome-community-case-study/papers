@@ -39,7 +39,7 @@ The whole update process is time consuming and expensive as the updates have to 
 %\todosk{das alles ist jetzt nicht unbedingt abhängig von docker sondern vom build prozess. das kann also auch alles durch cd (aka jenkins) gelöst werden, ohne auch nur einen docker container zu brauchen...}
 
 Therefore, \deleted{a }Docker\deleted{ version} is elaborated to simplify the administration process. 
-As soon as a new \added{release}\deleted{software} version of CoCoME is ready for delivery, the \added{d}\deleted{D}evelopment \added{t}\deleted{T}eam \added{starts the rebuilding process of the \CoCoME Docker Image.}\deleted{wraps it into a Docker Image}.
+As soon as a new \added{release}\deleted{software} version of \CoCoME is ready for delivery, the \added{d}\deleted{D}evelopment \added{t}\deleted{T}eam \added{starts the rebuilding process of the \CoCoME Docker Image.}\deleted{wraps it into a Docker Image}.
 \CoCoME is build in the Docker Container.
 % \todosk{das ist doch genau der gleiche prozess: einloggen und hochladen. ich seh jetzt hier nicht den großen vorteil nur weil man das image nicht löschen muss?}. 
 This Docker Image can be automatically deployed to the destination server according to the principle of Continuous Deployment (CD)~\cite{olsson2012climbing}. 
@@ -51,15 +51,15 @@ This Docker Image can be automatically deployed to the destination server accord
 \subsection{\added{New Scenario 2 -- }Adding a Mobile App}
 After successfully adding a Pick-up Shop
 %\todosk{heißt das wirklich so?}
-, the CoCoME company stays competitive with other online shop vendors (such as Amazon). 
+, the \CoCoME company stays competitive with other online shop vendors (such as Amazon). 
 However, in the smartphone era customers do not only want to buy goods exclusively from their homes or local stores. % computers\todosk{dafür gibts ja die real life shops?}. 
 Purchasing goods anywhere and anytime has become a demanding requirement in order to stay competitive on the market. %'on the way' comes more and more into fashion. 
-This raises the idea to create a \deleted{second}\added{third} sales channel next to the existing Pick-up Shop \added{and local stores} in the CoCoME system. 
+This raises the idea to create a \deleted{second}\added{third} sales channel next to the existing Pick-up Shop \added{and local stores} in the \CoCoME system. 
 As a consequence, more customers can be \added{acquired}\deleted{attracted}\added{ to increase the companies market share.} \deleted{gain a larger share of the market. }
 
 The customer can order and pay by using the \added{CoCoME Mobile App}\deleted{app}. 
 The delivery process is similar to the Pick-up Shop: The goods are delivered to a pick-up place (\deleted{i.e.}e.g., a store) of the customers\deleted{his/hers} choice.\deleted{for example in the neighborhood or the way to work.}
-By introducing the Mobile App as a multi OS application, the CoCoME system has to face various quality issues such as privacy, security and reliability. 
+By introducing the Mobile App as a multi OS application, the \CoCoME system has to face various quality issues such as privacy, security and reliability. 
 Also the performance of the whole application can be affected if many customers order via the app.
 
 
@@ -68,15 +68,21 @@ Also the performance of the whole application can be affected if many customers 
 %TD\newpage
 
 \section{Evolution Scenarios of the Microservice Architecture}
-This section introduces the evolution scenario of the microservice-based variation of CoCoME.
+This section introduces the evolution scenario of the microservice-based variation of \CoCoME.
 \subsection{\added{New Scenario 3 -- }Defining different microservices}
-After a year of economical stagnation, the CoCoME company decides to restructure its infrastructure. Global players like Amazon or Netflix demonstrated that using a microservice Architecture makes them more flexible regarding new functionality. When adding the Pick-up Shop, the CoCoME company realized that they have to break open the existing system. It was necessary to modify the \textit{WebService::Inventory} and the \textit{TradingSystem::Inventory} component~\cite{HeinrichRostamiReussner2016_1000052688}. Furthermore, adding a \textit{MobileAppClient} demonstrated that the SOAP/WS*-based web services provided by CoCoME are not compatible with REST-based App development.
+After a year of economical stagnation, the \CoCoME company decides to restructure its infrastructure. 
+Global players like Amazon or Netflix demonstrated that using a microservice \deleted{A}\added{a}rchitecture makes them more flexible regarding new functionality. 
+When adding the Pick-up Shop, the \CoCoME company realized that they have to break open the existing system. 
+It \deleted{was}\added{is} necessary to modify the \textit{WebService::Inventory} and the \textit{TradingSystem::Inventory} component~\cite{HeinrichRostamiReussner2016_1000052688}. 
+Furthermore, adding a \textit{MobileAppClient} demonstrated that the SOAP/WS*-based web services provided by \CoCoME are not compatible with REST-based App development.
 
-Inspired by the flexibility and reusability of microservices, the CoCoME company decided to invest money into a restructuring process. The current system is divided into a collection of loosely coupled services. Each of them covers a specific part of the former CoCoME system. The aim is to preserve the functionality of the current system and solely change its architecture.
+Inspired by the flexibility and reusability of microservices, the \CoCoME company decided to invest money into a restructuring process. 
+The current system is divided into a collection of loosely coupled services. Each of them covers a specific part of the former \CoCoME system. 
+The aim is to preserve the functionality of the current system and solely change its architecture.
 
 This enables the company to tap into\deleted{develop} new markets with fewer difficulties. \deleted{much easier.}
 Therefore, the future competitiveness is secured. 
-For example, the CoCoME company wants to extend their \deleted{product}\added{service} range by offering movie streaming.%\todosk{abwegig, aber ok...} 
+For example, the \CoCoME company wants to extend their \deleted{product}\added{service} range by offering movie streaming.%\todosk{abwegig, aber ok...} 
 This requires a vastly different system. 
 Nevertheless, customer management like login and means of payment are identical to the former \CoCoME system. 
 Those components already exists as a microservice and therefore can be reused\deleted{taken over}. 
