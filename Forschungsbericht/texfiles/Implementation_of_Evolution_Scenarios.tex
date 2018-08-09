@@ -6,8 +6,8 @@ This chapter describes implementation details of the Docker environment \added{i
 
 
 \section{Using a Docker Environment}\label{DockerImplementation}
- 	As shown in Fig. \ref*{Deploym_CoCoME}, the Docker Container contains five different Glassfish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER}. 
- 	By default, Glassfish provides a Derby \deleted{DB}\added{Database}\added{.}
+ 	As shown in Fig. \ref*{Deploym_CoCoME}, the Docker Container contains five different GlassFish servers. In particular they are called \textit{WEB}, \textit{ENTERPRISE}, \textit{STORE}, \textit{REGISTRY} and \textit{ADAPTER}. 
+ 	By default, GlassFish provides a Derby \deleted{DB}\added{Database}\added{.}
  	\added{The Derby Database}\deleted{that} is connected to the Service Adapter using \added{the} Java Database Con\added{n}ectivity (JDBS) interface.
  	\begin{figure}[h]
  		\centering
@@ -29,7 +29,7 @@ This chapter describes implementation details of the Docker environment \added{i
  			REGISTRY && cloud-registry-service  \\
  			ADAPTER && service-adapter-ear \\	
  		\end{tabular}
- 		\caption{Assignment of archive files to \added{the Glassfish }Servers}
+ 		\caption{Assignment of archive files to \added{the GlassFish }Servers}
  		\label{table_assignment}
  	\end{figure}
  \noindent
@@ -41,7 +41,7 @@ This chapter describes implementation details of the Docker environment \added{i
  		\caption{Deployment diagram CoCoME Pickup Shop}
  		\label{Deploym_Pickup}
  	\end{figure}
- 	As shown in Fig.~\ref{Deploym_Pickup}, this container provides \deleted{only }one Glassfish server.
+ 	As shown in Fig.~\ref{Deploym_Pickup}, this container provides \deleted{only }one GlassFish server.
  	\begin{figure}[H]
  		\centering
  		\begin{tabular}{l|l l}%{p{0.25\textwidth}|p{0.01\textwidth}p{0.25\textwidth}}
@@ -49,7 +49,7 @@ This chapter describes implementation details of the Docker environment \added{i
  			\hline
  			PICKUP\_SHOP && cocome-pickup-war \\	
  		\end{tabular}
- 		\caption{Assignment \added{of }archive files to \added{the Glassfish }Server\deleted{s}}
+ 		\caption{Assignment \added{of }archive files to \added{the GlassFish }Server\deleted{s}}
  		\label{table_assignment_pickup}
  	\end{figure}
  \noindent
@@ -97,7 +97,7 @@ The \textit{AppController} is written in Java using the SpringBoot framework and
  \section{Using Microservice Technology} \label{MicroserviceImplementation}
  The Microservice evolution scenario of CoCoME transfers the functionality of the hybrid cloud-based variant of CoCoME into a Microservice architecture.
  \added{The service}\deleted{that} is using REST communication between the different services. 
- The implementation is done using Java EE as programming language and Glassfish as deployment server. 
+ The implementation is done using Java EE as programming language and GlassFish as deployment server. 
  The Java Persistence API is used to store elements in a relational DB. 
  The Java API for RESTful Web Services (JAX-RS) is used to standardize the REST-communication between the different \deleted{M}\added{m}icroservices. 
  To serialize and deserialize Java-classes to XML- or JSON-files, the Java Architecture for XML Binding (JAXB) is used. 
