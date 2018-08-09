@@ -12,7 +12,7 @@ Developing the Mobile App Client as an extension of \CoCoME requires additional 
 \subsection{Use Cases of the Mobile App}
 \label{UseCasesMobileApp}
 \begin{figure}[t]
-	\includegraphics[width=\textwidth]{img/appUseCase.jpg}
+	\includegraphics[width=\textwidth]{img/appUseCase.pdf}
 	\caption{Use Case Diagram \CoCoME Mobile App}
 \end{figure}
 
@@ -160,28 +160,6 @@ The Customer is notified of the problem and enters the information again until i
 
 \end{description}
 
-%\textit{Brief Description} The app offers a possibility to create a new Customer account.\\ \newline
-%\textit{Involved Actors} AppCustomer\\ \newline
-%\textit{Precondition} The Customer does not have a Customer account yet and the app is started.\\ \newline
-%\textit{Trigger} A new AppCustomer wants to create an account.\\ \newline
-%\textit{Postcondition} The User is authenticated.\\ \newline
-%\textit{Standard Process}
-%\begin{enumerate}
-%	\item The AppCustomer has to fill out forms, requesting all necessary information to create a new AppCustomer account.
-%	\begin{itemize}
-%		\item[a)] Form for name, email and password
-%		\item[b)] Form for address
-%		\item[c)] Summery of the information 
-%	\end{itemize}
-%	\item The Customer fills out the forms, verifies and submits the information.
-%	\item The app verifies the given information and creates a new Customer account in the Inventory.
-%\end{enumerate}
-%
-%\textit{Alternative or Exceptional Processes}
-%\begin{itemize}
-%	\item[-] In step 3 : Provided information is incorrect or not valid. The Customer is notified of the problem and enters the information again until it passes the check.	
-%\end{itemize}
-
 \textbf{UC 16 - AuthenticateAppUser}
 
 \begin{description}[font=\normalfont\itshape]
@@ -251,7 +229,7 @@ This is because \CoCoME uses SOAP/WS*-based web services which are not compatibl
 A more detailed introduction about the technology used to implement the Mobile App Client can be found in~\cite{schnabel}. 
   
  \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{img/appComponent.png}
+	\includegraphics[width=\textwidth]{img/appComponent.pdf}
 	\caption{Component Diagram of the \CoCoME Ecosystem \deleted{A}after \deleted{A}adding the Mobile App Client}
 	\label{ComponentApp}
 \end{figure}
@@ -262,7 +240,7 @@ The \deleted{Rest}\added{REST Interface}\deleted{Api contains} \added{provides} 
 To implement the use cases \emph{UC14-16} the \deleted{Api }\deleted{Rest}REST Interface also provides endpoints for user management and processing sales. 
   
 \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{img/appSearchSequence.png}
+	\includegraphics[width=\textwidth]{img/appSearchSequence.pdf}
 	\caption{Sequence Diagram of Searching an Item in the Mobile App Client}
 	\label{SequenceAppSearch}
 \end{figure}
@@ -289,7 +267,7 @@ The \deleted{i}\added{s}ale process is finished as soon as the backend (\CoCoME)
 
 
 \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{img/appProcessSale.png}
+	\includegraphics[width=\textwidth]{img/appProcessSale.pdf}
 	\caption{Sequence Diagram of \deleted{P}\added{p}rocessing a \deleted{S}\added{s}ale}
 	\label{SequenceAppSale}
 \end{figure}
@@ -356,14 +334,14 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 		
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 0.7\textwidth]{img/UC3_Order_Products_1_OrderEntryCreate.jpg}
+				\includegraphics[width = 0.7\textwidth]{img/UC3_Order_Products_1_OrderEntryCreate.pdf}
 				\caption{UC 3: \textit{Order Products} (part 1)}
 				\label{MS_UC3_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC3_Order_Products_2_ProductOrderCreate.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC3_Order_Products_2_ProductOrderCreate.pdf}
 				\caption{UC 3: \textit{Order Products} (part 2)}
 				\label{MS_UC3_2}
 			\end{figure}
@@ -378,7 +356,7 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC4_Receive_Ordered_Products.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC4_Receive_Ordered_Products.pdf}
 				\caption{UC 4: \textit{Receiver Ordered Products} }
 				\label{MS_UC4}
 			\end{figure}
@@ -438,35 +416,35 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 		
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.pdf}
 				\caption{UC 1: \textit{Process Sale} (part 1)}
 				\label{MS_UC1_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.pdf}
 				\caption{UC 1: \textit{Process Sale} (part 2)}
 				\label{MS_UC1_2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 0.5\textwidth]{img/UC2_Manage_Express_Checkout.jpg}
+				\includegraphics[width = 0.5\textwidth]{img/UC2_Manage_Express_Checkout.pdf}
 				\caption{UC 2: \textit{Manage Express Mode}}
 				\label{MS_UC2}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 0.9\textwidth]{img/UC7_Change_Price.jpg}
+				\includegraphics[width = 0.9\textwidth]{img/UC7_Change_Price.pdf}
 				\caption{UC 7: \textit{Change Price}}
 				\label{MS_UC7}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = .9\textwidth]{img/UC8_Product_Exchange.jpg}
+				\includegraphics[width = .9\textwidth]{img/UC8_Product_Exchange.pdf}
 				\caption{UC 8: \textit{Product Exchange}}
 				\label{MS_UC8}
 			\end{figure}
@@ -490,14 +468,14 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC5_Show_Stock_Report.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC5_Show_Stock_Report.pdf}
 				\caption{UC 5: \textit{Show Stock Report}}
 				\label{MS_UC5}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[width = 1\textwidth]{img/UC6_Show_Delivery_Reports.jpg}
+				\includegraphics[width = 1\textwidth]{img/UC6_Show_Delivery_Reports.pdf}
 				\caption{UC 6: \textit{Show Delivery Report}}
 				\label{MS_UC6}
 			\end{figure}
@@ -521,7 +499,7 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 	
 	
 	\begin{sidewaysfigure}[ht]
-	   	\includegraphics[width=\textwidth]{img/MicroserviceArchitecture.jpg}
+	   	\includegraphics[width=\textwidth]{img/MicroserviceArchitecture.pdf}
 	   	\caption{Microservice architecture}
 	   	\label{MS_ARch}
 	\end{sidewaysfigure}
