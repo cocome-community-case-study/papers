@@ -7,3 +7,5 @@ tmp/
 *.pdfsync
 *.soc
 *.toc
+*.bbl
+*.blg
