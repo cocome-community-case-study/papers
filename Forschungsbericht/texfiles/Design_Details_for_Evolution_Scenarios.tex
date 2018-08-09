@@ -289,7 +289,7 @@ The original parts of the stack, like GlassFish and the , \deleted{Java Virtual 
 	\end{figure}
 \noindent	
 The Dockerfile defines an environment based on the latest version of the Linux distribution Ubuntu.
-Maven, Git and Java are also installed using the standard Ubuntu package manager. %\todosk{welche versionen von maven, git und java?}.
+Maven, Git and Java are also installed using the standard Ubuntu package manager. %\{welche versionen von maven, git und java?}.
 Git \deleted{has}serves two purposes: On the one hand it is used to download the most recent version of \added{the} \CoCoME \added{source code or a precompiled \CoCoME version}.
 On the other hand, it is used to download a prefabricated version of GlassFish that is already \added{tailored to the needs of the \CoCoME application}\deleted{includes domains and other adjustments required for \CoCoME}. 
 Java is required by GlassFish and \CoCoME as they need the \deleted{Java Virtual Machine}\added{JVM}. 
@@ -319,8 +319,7 @@ The following subsections are divided into the \deleted{M}\added{m}icroservices 
 Sec.\ref{archiOverviewMicro} describes the general architectural overview of the \deleted{M}\added{m}icroservice variant of \CoCoME.
 	
 
-%TODO  Hier weiter
-	
+
 
 	\FloatBarrier
 		\subsection{Orders}
@@ -347,7 +346,6 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			\end{figure}
 		
 		\subsubsection*{Behavio\deleted{u}ral View on UC 4 - Receive Ordered Products}
-		%TODO ÜBERARBEITEN: Das ergibt keinen sinn. Der UC hat laut dem Buchkapitel irgendwie einene anderen Sinn. Kommen da einzelne Produkte an, oder kommt da die ganze Order an? Worüber wird iteriert usw.     Vergleich es mal mit dem UC4 Diagramm aus dem Buch  => Den Text und UC diagramm überarbeiten
 		Fig.~\ref{MS_UC4} shows\deleted{, that first} the \textit{ProductOrder} element\added{.}
 		\added{It}\deleted{, which handles the order with the passed \deleted{id}\added{\textit{Id}},} is refreshed and the delivery date is set to the passed date.
 		\added{The \textit{ProductOrder} element handles the order regarding the containing \textit{Id}.}
@@ -388,7 +386,7 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 
 		\subsubsection*{Behavioral View on UC 2 - Manage Express Checkout}
 		Changing the express mode is triggered on two occasions (\textit{externalCall}). 
-		First, when finishing a sale and if some conditions are fulfilled\todosk{welche bedingungen?}, the \textit{CashDesk} switches into express mode automatically. 
+		First, when finishing a sale and if, as descibed in \cite{herold2008}, some customizable terms regarding previous sales are fulfilled, the \textit{CashDesk} switches into express mode automatically.\\ These conditions can for example be an average of 4 goods per selling process during the past ten selling processes.\\
 		Second, the Cashier \added{switches manually back to normal mode.}\deleted{is able to switch back to normal mode.}
 		In both cases, the \textit{updateExpressLight} routine checks the current \textit{ExpressLight} state and performs an update in accordance with the kind of call.
 		
@@ -400,7 +398,6 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 		Finally, the \textit{StockItem} in the database is updated.
 		
 		\subsubsection*{Behavio\deleted{u}ral View on UC 8 - Product Exchange}
-		%TODO DU hattest hier drin, dass der EnterpriseManager die Info bekommt. das stimmt ja nicht. Das wird automatisch getrigered ohne das einer tatsächlich sagen muss: Exchange Products! Das macht das System
 		In case a Store is going to run out of a certain \textit{StockItem}, products from a different \textit{Store} within the same Enterprise can be exchanged. 
 		The process is triggered at the end of a sale. 
 		It is shown in  Fig.~\ref{MS_UC8}. 
@@ -458,7 +455,6 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 		This process is described \deleted{as}\added{in the use case} UC 5 in~\ref{MS_UC5}. 
 		The \textit{StoreManager} enters the store identifier and the \textit{StoreCommunicator} within the \textit{Reports} \deleted{M}\added{m}icroservice requests the desired information via a \deleted{rest}\added{REST} call.
 		
-		%TODO Ähm... laut UC 6 im Buch sollte der EnterpriseManager die den enterprise identifiert eingeben. Nicht Order?!   Hast du das falsch implementiert?
 		Besides, the \textit{Reports} \deleted{M}\added{m}icroservice provides the \deleted{opportunity}\added{functionality} to calculate the mean time\deleted{s} a delivery \added{takes} from each supplier to a considered enterprise\deleted{ takes} (UC 6). 
 		The process is described in Fig.~\ref{MS_UC6}. 
 		The \textit{EnterpriseManager} enters the order \deleted{id}\added{\textit{Id}} and the \textit{OrderCommunicator} requests the information as a delivery report via \deleted{rest}\added{REST} call. 
