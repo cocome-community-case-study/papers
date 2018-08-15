@@ -39,7 +39,7 @@ Developing the Mobile App Client as an extension of \CoCoME requires additional 
 	\item The AppCustomer gets an overview of the items in the cart, their price and the running total.
 	\item The AppCustomer proceed to the Checkout 
 	\item The AppCustomer selects the Store where s/he wants to pick up his/her	purchased product items. 
-	\item The AppCustomer is presented with a login form and is required to complete the "Authenticate user" use case.
+	\item The AppCustomer is presented with a login form and is required to complete the \textit{AuthenticateUser} use case.
 	\item In order to initiate card payment, the customer selects a credit card used for the purchase.
 	\item The AppCustomer enters his/her PIN in the designated field presented by the System.
 	\item The System presents the Customer with an overview of the purchase, the AppCustomer confirms the purchase and waits for validation. Step 9 is repeated until the validation is successful or the Customer decides to cancel the purchase.
@@ -54,7 +54,7 @@ Developing the Mobile App Client as an extension of \CoCoME requires additional 
 \item[]
 \item \textit{In step 8: No Card available}
 	\begin{enumerate}[leftmargin=.5cm]
-		\item In order to add a new credit card the Customer clicks the Add Card button.
+		\item In order to add a new credit card the Customer clicks the AddCard button.
 		\item The Customer enters the card number of the new credit card and saves the card.
 	\end{enumerate}
 	
@@ -230,7 +230,7 @@ A more detailed introduction about the technology used to implement the Mobile A
   
  \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{img/appComponent.pdf}
-	\caption{Component Diagram of the \CoCoME Ecosystem \deleted{A}after \deleted{A}adding the Mobile App Client}
+	\caption{Component Diagram of the \CoCoME Ecosystem After Adding the Mobile App Client}
 	\label{ComponentApp}
 \end{figure}
 
@@ -268,7 +268,7 @@ The \deleted{i}\added{s}ale process is finished as soon as the backend (\CoCoME)
 
 \begin{figure}[!h]
 	\includegraphics[width=\textwidth]{img/appProcessSale.pdf}
-	\caption{Sequence Diagram of \deleted{P}\added{p}rocessing a \deleted{S}\added{s}ale}
+	\caption{Sequence Diagram of Processing a Sale}
 	\label{SequenceAppSale}
 \end{figure}
 
@@ -284,7 +284,7 @@ The original parts of the stack, like GlassFish and the , \deleted{Java Virtual 
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width = 0.7\textwidth]{img/tech_stack_CoCoME.pdf}
-		\caption{Extended technology stack \CoCoME}
+		\caption{Extended Technology Stack \CoCoME}
 		\label{techStack}
 	\end{figure}
 \noindent	
@@ -334,14 +334,14 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 0.7\textwidth]{img/UC3_Order_Products_1_OrderEntryCreate.pdf}
-				\caption{UC 3: \textit{Order Products} (part 1)}
+				\caption{UC 3: \textit{Order Products} (Part 1)}
 				\label{MS_UC3_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC3_Order_Products_2_ProductOrderCreate.pdf}
-				\caption{UC 3: \textit{Order Products} (part 2)}
+				\caption{UC 3: \textit{Order Products} (Part 2)}
 				\label{MS_UC3_2}
 			\end{figure}
 		
@@ -414,14 +414,14 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_1_StartSaleAndProductChoosing.pdf}
-				\caption{UC 1: \textit{Process Sale} (part 1)}
+				\caption{UC 1: \textit{Process Sale} (Part 1)}
 				\label{MS_UC1_1}
 			\end{figure}
 			
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[width = 1\textwidth]{img/UC1_Process_Sale_2_FinishSaleAndPayment.pdf}
-				\caption{UC 1: \textit{Process Sale} (part 2)}
+				\caption{UC 1: \textit{Process Sale} (Part 2)}
 				\label{MS_UC1_2}
 			\end{figure}
 			
@@ -477,7 +477,7 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 			\end{figure}
 			
 	\FloatBarrier
-	\subsection{Architectural overview}	\label{archiOverviewMicro}	
+	\subsection{Architectural Overview}	\label{archiOverviewMicro}	
 	This section describes the architectural design of the \deleted{M}\added{m}icroservices. 
 	\CoCoME is divided into four different \deleted{M}\added{m}icroservices: \textit{Orders}, \textit{Reports}, \textit{Stores} and \textit{Products} (Fig.~\ref{MS_ARch}). 
 	Each \deleted{M}\added{m}icroservice provides its own graphical user interface\added{.}
@@ -496,6 +496,6 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 	
 	\begin{sidewaysfigure}[ht]
 	   	\includegraphics[width=\textwidth]{img/MicroserviceArchitecture.pdf}
-	   	\caption{Microservice architecture}
+	   	\caption{Microservice Architecture}
 	   	\label{MS_ARch}
 	\end{sidewaysfigure}
