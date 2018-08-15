@@ -3,7 +3,7 @@
 \chapter{Design Details for Evolution Scenarios}
 \label{c:design}
 In this chapter we provide the detailed design documentation for each of the evolution scenarios introduced in the previous section. 
-Sec.~\ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec.~\ref{Docker} describes the adaptive changes of using a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of \CoCoME~\cite{HeinrichRostamiReussner2016_1000052688}. In contrast, Sec.~\ref{MS} provides a detailed design documentation of a new architectural version of \CoCoME. This perfective evolution scenario is realized based on the \deleted{M}\added{m}icroservice idea.
+Sec.~\ref{App} sketches the design decision for the Mobile App that provides a second sales channel next to the existing Pick-up Shop. Sec.~\ref{MS} provides a detailed design documentation of a new architectural version of \CoCoME. In contrast, Sec.~\ref{Docker} describes the adaptive changes of using a Docker environment to simplify the update process. They are both based on, or at least use the Hybrid Cloud-based Variant of \CoCoME~\cite{HeinrichRostamiReussner2016_1000052688}. This perfective evolution scenario is realized based on the \deleted{M}\added{m}icroservice idea.
 
 \section{Adding a Mobile App Client} 
 \label{App}
@@ -240,7 +240,7 @@ The \deleted{Rest}\added{REST Interface}\deleted{Api contains} \added{provides} 
 To implement the use cases \emph{UC14-16} the \deleted{Api }\deleted{Rest}REST Interface also provides endpoints for user management and processing sales. 
   
 \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{img/appSearchSequence.pdf}
+	\includegraphics[width=0.95\textwidth]{img/appSearchSequence.pdf}
 	\caption{Sequence Diagram of Searching an Item in the Mobile App Client}
 	\label{SequenceAppSearch}
 \end{figure}
@@ -274,46 +274,7 @@ The \deleted{i}\added{s}ale process is finished as soon as the backend (\CoCoME)
 
 \newpage
 
-\section{Using a Docker Environment} \label{Docker}
-
-As shown in Fig.~\ref{techStack}, using a Docker Environment affects the technology stack by adding additional layers. 
-\added{The \CoCoME stack consists of GlassFish, Java Virtual Machine (JVM) and Maven.}
-More detailed, the given \CoCoME \deleted{S}\added{s}tack is moved into \deleted{the}\added{a} Docker \deleted{Deamon}\added{Container} which runs a Linux distribution. 
-The original parts of the stack, like GlassFish and the , \deleted{Java Virtual Machine}\added{JVM} are still \deleted{a part of the stack}\added{functioning as before}.
-	
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width = 0.7\textwidth]{img/tech_stack_CoCoME.pdf}
-		\caption{Extended Technology Stack \CoCoME}
-		\label{techStack}
-	\end{figure}
-\noindent	
-The Dockerfile defines an environment based on the latest version of the Linux distribution Ubuntu.
-Maven, Git and Java are also installed using the standard Ubuntu package manager. %\todosk{welche versionen von maven, git und java?}.
-Git \deleted{has}serves two purposes: On the one hand it is used to download the most recent version of \added{the} \CoCoME \added{source code or a precompiled \CoCoME version}.
-On the other hand, it is used to download a prefabricated version of GlassFish that is already \added{tailored to the needs of the \CoCoME application}\deleted{includes domains and other adjustments required for \CoCoME}. 
-Java is required by GlassFish and \CoCoME as they need the \deleted{Java Virtual Machine}\added{JVM}. 
-Maven is needed to \added{build and} deploy the latest version of \CoCoME onto the provided GlassFish servers.
-
-During the development\added{ phase}\deleted{, it was}\added{ we} decided to implement and provide two different versions\added{ of the \CoCoME Docker Container}. 
-The first version always pulls the most recent \CoCoME source code from GitHub, downloads the entire dependencies with Maven, compiles and builds the project and finally deploys \CoCoME on the GlassFish servers. 
-As a consequence, creating and starting the Docker Container \added{for \CoCoME} takes about one hour.
-
-
-In contrast, the second version \added{of the \CoCoME Docker Container}\deleted{only }pulls a prefabricated version of \CoCoME from GitHub. 
-Therefore, pulling the source code \deleted{up }to build\deleted{ing} the \CoCoME project is skipped. 
-Maven does not have to be included in the technology stack. 
-Solely, deploying \CoCoME on the GlassFish server is necessary.
-This reduces the deployment time to a few minutes.\deleted{ but has a disadvantage: }
-\added{Nevertheless,} the prefabricated version of the GlassFish Servers and \CoCoME has to be updated manually. 
-Thus, it is sometimes not the most recent version.
-By providing both, a fast deploying version and a current version, the user can choose what\deleted{'s}\added{ suits best for his/her needs}\deleted{ situation}.
-	
-
-	
-
-	
-\section{Microservices Technology} \label{MS}
+\section{Microservice Architecture} \label{MS}
 In this section we provide a brief design documentation of the use cases that are defined in the hybrid cloud-based variant of \CoCoME~\cite{herold2008}(p.4-10).
 The following subsections are divided into the \deleted{M}\added{m}icroservices and the corresponding use cases. 
 Sec.\ref{archiOverviewMicro} describes the general architectural overview of the \deleted{M}\added{m}icroservice variant of \CoCoME.
@@ -499,3 +460,44 @@ Sec.\ref{archiOverviewMicro} describes the general architectural overview of the
 	   	\caption{Microservice Architecture}
 	   	\label{MS_ARch}
 	\end{sidewaysfigure}
+\newpage
+
+\section{Container Virtualization} \label{Docker}
+
+As shown in Fig.~\ref{techStack}, using a Docker Environment affects the technology stack by adding additional layers. 
+\added{The \CoCoME stack consists of GlassFish, Java Virtual Machine (JVM) and Maven.}
+More detailed, the given \CoCoME \deleted{S}\added{s}tack is moved into \deleted{the}\added{a} Docker \deleted{Deamon}\added{Container} which runs a Linux distribution. 
+The original parts of the stack, like GlassFish and the , \deleted{Java Virtual Machine}\added{JVM} are still \deleted{a part of the stack}\added{functioning as before}.
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width = 0.7\textwidth]{img/tech_stack_CoCoME.pdf}
+		\caption{Extended Technology Stack \CoCoME}
+		\label{techStack}
+	\end{figure}
+\noindent	
+The Dockerfile defines an environment based on the latest version of the Linux distribution Ubuntu.
+Maven, Git and Java are also installed using the standard Ubuntu package manager. %\todosk{welche versionen von maven, git und java?}.
+Git \deleted{has}serves two purposes: On the one hand it is used to download the most recent version of \added{the} \CoCoME \added{source code or a precompiled \CoCoME version}.
+On the other hand, it is used to download a prefabricated version of GlassFish that is already \added{tailored to the needs of the \CoCoME application}\deleted{includes domains and other adjustments required for \CoCoME}. 
+Java is required by GlassFish and \CoCoME as they need the \deleted{Java Virtual Machine}\added{JVM}. 
+Maven is needed to \added{build and} deploy the latest version of \CoCoME onto the provided GlassFish servers.
+
+During the development\added{ phase}\deleted{, it was}\added{ we} decided to implement and provide two different versions\added{ of the \CoCoME Docker Container}. 
+The first version always pulls the most recent \CoCoME source code from GitHub, downloads the entire dependencies with Maven, compiles and builds the project and finally deploys \CoCoME on the GlassFish servers. 
+As a consequence, creating and starting the Docker Container \added{for \CoCoME} takes about one hour.
+
+
+In contrast, the second version \added{of the \CoCoME Docker Container}\deleted{only }pulls a prefabricated version of \CoCoME from GitHub. 
+Therefore, pulling the source code \deleted{up }to build\deleted{ing} the \CoCoME project is skipped. 
+Maven does not have to be included in the technology stack. 
+Solely, deploying \CoCoME on the GlassFish server is necessary.
+This reduces the deployment time to a few minutes.\deleted{ but has a disadvantage: }
+\added{Nevertheless,} the prefabricated version of the GlassFish Servers and \CoCoME has to be updated manually. 
+Thus, it is sometimes not the most recent version.
+By providing both, a fast deploying version and a current version, the user can choose what\deleted{'s}\added{ suits best for his/her needs}\deleted{ situation}.
+	
+
+	
+
+	
